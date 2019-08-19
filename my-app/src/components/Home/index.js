@@ -7,7 +7,7 @@ const Home = () => {
         <>
         <div className="header d-inline-flex align-items-end">
         <div className="mb-4 mr-3"> 
-            <a href="#"><img src={logo} className="logo"/></a> 
+            <a href="#"><img src={"https://drive.google.com/file/d/1ZIE78k1cMWnaHQbN7kKGZQ7mtSv3unPT/view"} className="logo"/></a> 
         </div>
         <div class="menu">
             <div>
