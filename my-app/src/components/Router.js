@@ -6,15 +6,15 @@ import Login from './Login'
 import Home from './Home'
 // import Cocina from './Cocina/'
 // import Admin from './Admin/'
-import ProtectedRoute from '../controller/routes/protected-route'
-import AdminRoute from '../controller/routes/admin-route'
+// import ProtectedRoute from '../controller/routes/protected-route'
+// import AdminRoute from '../controller/routes/admin-route'
 
 const Routes = () => {
   return (
       <Switch>
         <Route exact path='/' component={Home} />
-        <ProtectedRoute exact path='/registro' component={Login} />
-        <ProtectedRoute exact path='/registro' component={Register} />
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/registro' component={Register} />
         {/* <ProtectedRoute exact path='/home' component={Home} /> */}
         {/* <ProtectedRoute exact path='/cocina' component={Cocina} />
         <AdminRoute exact path='/admin' component={Admin} /> */}
