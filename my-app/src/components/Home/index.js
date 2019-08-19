@@ -1,43 +1,45 @@
 import React from 'react'
-import logo from '../../img/1280px-Alicorp.svg.png'
+import logo from '../../img/logo.png';
+import baking from '../../img/baking.jpg'
+import cooking from '../../img/cooking.jpg'
 const Home = () => {
     return(
-        <div className="header">
-        <div> 
+        <>
+        <div className="header d-inline-flex align-items-end">
+        <div className="mb-4 mr-3"> 
             <a href="#"><img src={logo} className="logo"/></a> 
         </div>
         <div class="menu">
             <div>
-                <a href="/alicorp/nosotros/vision-mision-y-valores.html">Nosotros</a>
-                <span>
-                    <ul>
-                        <li><a href="/alicorp/nosotros/vision-mision-y-valores.html"  title="Nuestra visión, misión, pilares y valores">Nuestra visión, misión, pilares y valores</a></li>
-                        <li><a href="/alicorp/nosotros/nuestra-gestion-en-Peru.html"  title="Nuestra Gestión en Perú">Nuestra Gestión en Perú</a></li>
-                        <li><a href="/alicorp/nosotros/donde-estamos.html"  title="¿Dónde estamos?">¿Dónde estamos?</a></li>
-                    </ul>
-                </span>
+                <a href="#">Nosotros</a>
             </div>
             <div>
-                <a href="/alicorp/marcas/consumo-masivo.html">Marcas</a>
-                <span>
-                    <ul>
-                        <li><a href="/alicorp/marcas/consumo-masivo.html"  title="Consumo Masivo">Consumo Masivo</a></li>
-                        <li><a href="/alicorp/marcas/productos-industriales.html"  title="B2B">B2B</a></li>
-                        <li><a href="/alicorp/marcas/nutricion-animal.html"  title="Vitapro">Vitapro</a></li>
-                    </ul>
-                </span>
+                <a href="#">Marcas</a>
             </div>
             <div>
-                <a href="/alicorp/responsabilidad-social/nuestro-modelo-de-desarrollo.html">Desarrollo Sostenible</a>
-                <span>
-                    <ul>
-                        <li><a href="/alicorp/responsabilidad-social/nuestro-modelo-de-desarrollo.html"  title="Nuestro modelo de Desarrollo Sostenible">Nuestro modelo de Desarrollo Sostenible</a></li>
-                        <li><a href="/alicorp/desarrollo-sostenible/reporte-de-sostenibilidad.html"  title="Reporte de Sostenibilidad">Reporte de Sostenibilidad</a></li>
-                    </ul>
-                </span>
+                <a href="#">Desarrollo Sostenible</a>
             </div>
-        <div><a href="https://www.alicorp.com.pe/inversionistas">Inversionistas</a></div></div>
         </div>
+        </div>
+                <div id="carouselExampleControls" className="carousel slide w-100" data-ride="carousel">
+                <div className="carousel-inner">
+                    <div className="carousel-item active">
+                    <img src={baking} class="d-block w-100" alt="..."/>
+                    </div>
+                    <div className="carousel-item">
+                    <img src={cooking} class="d-block w-100" alt="..."/>
+                    </div>
+                </div>
+                <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span className="sr-only">Previous</span>
+                </a>
+                <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span className="sr-only">Next</span>
+                </a>
+                </div>
+        </>
     )
 }
 export default Home;
