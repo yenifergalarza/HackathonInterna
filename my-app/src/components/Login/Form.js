@@ -11,8 +11,8 @@ const Form = ({ logprop }) => {
 
   return (
     <form 
-    //onSubmit={async e => {
-      // e.preventDefault()
+    onSubmit={ e => {
+      e.preventDefault()
 
       // await getToken(email, password).then((res) => {
       //   // if (res.token) {
@@ -25,9 +25,9 @@ const Form = ({ logprop }) => {
 
     //   getUser(email).then((data) => {
     //     localStorage.setItem('user', JSON.stringify(data));
-    //     auth.login(() => { logprop.history.push("/home") })
+        auth.login(() => { logprop.history.push("/home") })
     //   }).catch(console.error)
-    // }}
+    }}
       className="col-12 flex-column d-flex form-group" data-testid="form">
 
       <Inputs
