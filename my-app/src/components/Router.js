@@ -1,7 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom';
 // import Orders from './Products'
-import Register from './Registro'
 import Login from './Login'
 import Home from './Home'
 // import Cocina from './Cocina/'

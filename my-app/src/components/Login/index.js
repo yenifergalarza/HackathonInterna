@@ -1,25 +1,25 @@
-import React from 'react';
-import Form from './Form';
-import ImgLogin from './ImgLogin';
-// import img from '../../images/bq.png'
-
-
-const Login = (props) => {
-
-  return (
-    <>
-      <main data-testid="login" className='container d-flex fill-available justify-content-center align-items-center'>
-        <ImgLogin
-          // imgSrc={img}
-          cssClass="col-lg-6 justify-content-center text-align"
-          imgClass="img-fluid"
-        />
-        <div
-          className="col-lg-6 py-3 d-flex align-items-center form-style flex-column">
-          <Form logprop={props} />
+import React, {useState} from 'react'
+import Iniciar from '../Inicar-sesion';
+import Registro from '../Registro';
+import MenuOpts from '../Options'
+const Login = () => {
+    const [type, setType] = useState('Iniciar Sesión')
+    return(
+        <div>
+            <ul className="nav nav-tabs w-100" role="tablist">
+              <MenuOpts click={() => setType('Iniciar Sesión')} options="Desayuno" aClass="nav-link active" />
+              <MenuOpts click={() => setType('Registarse')} options="Almuerzo" aClass="nav-link" />
+            </ul>
+            <div data-testid='opt' className="card-columns">
+              {type === 'Iniciar Sesión' && (
+                <Iniciar />
+              )}
+              {type === 'Registrarse' && (
+                <Registro  />
+              )}
+            </div>
         </div>
-      </main>
-    </>
-  )
+
+    )
 }
-export default Login
+export default Login;
