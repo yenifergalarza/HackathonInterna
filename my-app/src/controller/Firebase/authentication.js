@@ -12,5 +12,7 @@ import * as firebase from "firebase";
   };
   // Initialize Firebase
 
-const firebaseAuth = firebase.initializeApp(firebaseConfig);
-export default firebaseAuth;
+export  const firebaseAuth = firebase.initializeApp(firebaseConfig);
+const firestore = firebase.firestore();
+
+export const productsData = firestore.collection("allProducts");
