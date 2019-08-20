@@ -3,7 +3,7 @@ import logo from '../../img/logo.png';
 import baking from '../../img/baking.jpg'
 import cooking from '../../img/cooking.jpg'
 import auth from '../../controller/routes/auth';
-const Home = ({logprop}) => {
+const Home = (props) => {
   return (
     <>
       <div className="header d-inline-flex align-items-end">
@@ -21,7 +21,7 @@ const Home = ({logprop}) => {
             <a href="#">Desarrollo Sostenible</a>
           </div>
           <div>
-            <button onClick={()=>{auth.login(() => { logprop.history.push("/login") })}}>Mi Tiendita</button>
+            <button onClick={()=>{auth.login(() => { props.history.push("/login") })}}>Mi Tiendita</button>
           </div>
         </div>
       </div>
