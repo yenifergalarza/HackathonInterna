@@ -1,25 +1,26 @@
 import React from 'react';
 
-const Ofertas = ({name,price,id,image,counter,addToCart,removeFromCart}) => {
-  console.log(image);
+const Ofertas = ({name,id,image,addToCart,removeFromCart,price,counter,addProduct}) => {
+
   return(
     
         <div className="m-3">
           <img src={image} alt="oferta" ></img>
           <p>{name}</p>
           <div class="btn-group btn-group-sm m-1" role="group"  data-toggle="buttons">
-  <button class="btn btn-danger" onClick={() => addToCart(id, name, price, counter)}>
+  <button class="btn btn-danger" onClick={() => addToCart(id)}>
    
 <i class="fas fa-plus"></i>
 
   </button>
   <button class="btn btn-danger " > 
-    el contador p
+    {counter}
   </button>
   <button class="btn btn-danger"  onClick={() => removeFromCart(id)} >
     <i class="fas fa-minus"></i>
   </button>
 </div>
+<button class="btn btn-danger"  onClick={() =>   addProduct (id, name, price, counter)} > Añade</button>
         </div>
        
     

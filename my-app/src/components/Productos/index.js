@@ -13,16 +13,23 @@ const Index = () => {
   const [tipo, setTipo] = useState("ofertas");
   const [products, setProducts] = useState([]);
   //Añadir productos a la lista
-  //Aumentar contidad de productos de la lista
-  const addToCart = (id, title, price, counter) => {
+  const addProduct = (id, title, price, counter) => {
     const newProducts = [...products, { id, title, price, counter }];
-    newProducts.forEach(prod => {
+    setProducts(newProducts);
+  };
+
+  //Aumentar contidad de productos de la lista
+  const addToCart = id => {
+    let productsNew = [...products];
+    productsNew.forEach(prod => {
       if (prod.id === id) {
         return (prod.counter = prod.counter + 1);
       }
     });
-    return setProducts(newProducts);
+    return setProducts(productsNew);
   };
+
+  //Dismin
 
   //Disminuir cantidad de productos de la lista
   const removeFromCart = id => {
@@ -69,7 +76,7 @@ const Index = () => {
            {ofertasArray.map(prod => (
                <Ofertas
                id={prod.id}
-              
+              addProduct={addProduct}
                addToCart={addToCart}
           removeFromCart={removeFromCart}
                  name={prod.name}
