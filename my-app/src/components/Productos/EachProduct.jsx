@@ -29,9 +29,6 @@ const EachProducts = ({key,name,price,image}) => {
     <button  class="btn btn-danger btn-sm m-1">Compra</button>
  
   </div>
-      
-     
-    
     </>
   )
 }

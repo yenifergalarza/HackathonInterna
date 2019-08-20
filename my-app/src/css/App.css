@@ -2,6 +2,15 @@
   text-align: center;
   box-sizing: border-box;
 }
+.text-color{
+  color: #858585;
+}
+a:hover{
+  color:#E40421;
+}
+.green{
+  border-bottom: 1px solid #53B423;
+}
 
 .container {
   flex-direction: column;
@@ -9,30 +18,27 @@
 .header {
   background: #e40421;
   width: 100%;
-  height: 90px;
+  /* height: 90px; */
 }
-.headerProducts {
-  background: #e40421;
-  margin: 0 auto;
-  width: 100%;
-  height: 30%;
+.border{
+  border: 1px solid #ced4da;
 }
-
 .menu div {
-
   float: left;
   padding: 0;
   display: block;
   color: white;
   height: 35px;
-  margin: 0 0 0 4px;
+  margin: 0px 0px 0px 3px;
 }
 .menu div a {
   text-align: center;
   line-height: 35px;
   color: white;
   display: block;
-  padding: 0 45px;
+  font-size: 10px;
+  /* padding: 0 45px; */
+
   background: #b40312;
   transition: all .3s linear 0s;
   font-weight: bold;
@@ -216,15 +222,15 @@
 }
 
 .btn-color {
-  background-color: #3594cc;
+  background-color: #B40312;
   color: white;
   font-weight: bolder;
-  border-radius: 20px;
   margin-top: 15px;
+  border-radius: 0;
 }
 
 .btn-color:hover {
-  background-color: #4aaae2;
+  background-color: #B40312;
   color: white;
 }
 
