@@ -29,7 +29,7 @@ const Products = () => {
                       <h6 className="card-title text-center">
                         {ele.data().name} ${ele.data().price}
                       </h6>
-                      <img></img>
+                      <img src={ele.data().image}></img>
                     </div>
                   </div>
             )}
