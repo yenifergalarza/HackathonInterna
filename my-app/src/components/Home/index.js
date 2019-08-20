@@ -2,25 +2,31 @@ import React from 'react'
 import logo from '../../img/logo.png';
 import baking from '../../img/baking.jpg'
 import cooking from '../../img/cooking.jpg'
-const Home = () => {
+import auth from '../../controller/routes/auth';
+const Home = (props) => {
   return (
     <>
-      <div className="header d-inline-flex align-items-end">
-        <div className="mb-4 mr-3">
-          <a href="#"><img src={logo} className="logo" /></a>
+      <div className="header d-inline-flex align-items-end container pb-3">
+      <div className="col-12 d-flex justify-content-center align-items-center p-0 menu">
+        <div className="mb-4 col-6">
+          <img src={logo} className="logo" />
         </div>
-        <div class="menu">
-          <div>
+        <div className="col-6 col-md-3 col-lg-3">
+          <a onClick={()=>{auth.login(() => { props.history.push("/login") })}}>Mi Tiendita</a>
+        </div>
+        </div>
+        <div className="menu mt-2 col-12 d-flex p-0 justify-content-evenly">
+          <div className="col-4 col-md-3 col-lg-3">
             <a href="#">Nosotros</a>
           </div>
-          <div>
+          <div className="col-4 col-md-3 col-lg-3">
             <a href="#">Marcas</a>
           </div>
-          <div>
-            <a href="#">Desarrollo Sostenible</a>
+          <div className="col-4 col-md-3 col-lg-3">
+            <a href="#">Inversionistas</a>
+          </div>
           </div>
         </div>
-      </div>
       <div id="carouselExampleControls" className="carousel slide w-100" data-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
