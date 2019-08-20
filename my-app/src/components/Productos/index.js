@@ -48,7 +48,8 @@ const Index = (allProducts) => {
         </div>
       )}
       {tipo === "productos" && (
-        <ProductBar></ProductBar>      )}
+        <ProductBar></ProductBar>
+        )}
       
     </>
   );
