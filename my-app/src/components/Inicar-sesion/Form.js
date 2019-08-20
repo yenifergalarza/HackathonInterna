@@ -5,7 +5,7 @@ import Inputs from '../Input'
 import auth from '../../controller/routes/auth';
 
 const Form = ({ logprop }) => {
-  const [email, setEmail] = useState("");
+  const [dni, setDni] = useState("");
   const [password, setPassword] = useState("");
   const [err, setErr] = useState("")
 
@@ -13,30 +13,17 @@ const Form = ({ logprop }) => {
     <form 
     onSubmit={ e => {
       e.preventDefault()
-
-      // await getToken(email, password).then((res) => {
-      //   // if (res.token) {
-      //   localStorage.setItem('token', res.token)
-      //   // console.log(res.token)
-      //   // }
-      // }).catch((err) => {
-      //   setErr(err.message)
-      // });
-
-    //   getUser(email).then((data) => {
-    //     localStorage.setItem('user', JSON.stringify(data));
         auth.login(() => { logprop.history.push("/home") })
-    //   }).catch(console.error)
     }}
       className="col-12 flex-column d-flex form-group" data-testid="form">
 
       <Inputs
         divInput="input-group form-group radius-50 white"
-        type='email'
-        value={email}
-        label='Email'
-        update={(e) => setEmail(e.target.value)}
-        placeholder='Email'
+        type='number'
+        value={dni}
+        label='DNI'
+        update={(e) => setDni(e.target.value)}
+        placeholder='DNI'
         icon='fas fa-user'
         classValue='emailValue form-control border-none radius-50'
         visibility="input-group-append border-none radius-50" />
@@ -46,7 +33,7 @@ const Form = ({ logprop }) => {
         value={password}
         label='Password'
         update={(e) => setPassword(e.target.value)}
-        placeholder='Password'
+        placeholder='Contraseña'
         icon='fas fa-lock'
         classValue='passwordValue form-control border-none radius-50'
         visibility="input-group-append border-none radius-50"

@@ -2,9 +2,11 @@ import React from 'react'
 import Form from './form'
 const Register = (props) => {
     return(
-        <div>
-            <Form logprop={props}/>
+        <main data-testid="login" className='container d-flex fill-available justify-content-center align-items-center'>
+        <div className="py-3 d-flex align-items-center flex-column">
+          <Form logprop={props} />
         </div>
-    )
+      </main>
+      )
 }
 export default Register;
