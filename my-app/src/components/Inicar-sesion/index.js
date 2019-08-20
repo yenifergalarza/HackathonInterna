@@ -8,8 +8,8 @@ const Iniciar = (props) => {
 
   return (
     <>
-      <main data-testid="login" className='container d-flex fill-available justify-content-center align-items-center'>
-        <div className="py-3 d-flex align-items-center flex-column">
+      <main data-testid="login" className='mt-2'>
+        <div className="">
           <Form logprop={props} />
         </div>
       </main>

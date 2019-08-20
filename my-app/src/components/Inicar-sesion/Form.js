@@ -15,28 +15,24 @@ const Form = ({ logprop }) => {
       e.preventDefault()
         auth.login(() => { logprop.history.push("/home") })
     }}
-      className="col-12 flex-column d-flex form-group" data-testid="form">
+      className="col-12 mt-3 flex-column d-flex form-group" data-testid="form">
 
       <Inputs
-        divInput="input-group form-group radius-50 white"
+        divInput="input-group form-group white border"
         type='number'
         value={dni}
         label='DNI'
         update={(e) => setDni(e.target.value)}
         placeholder='DNI'
-        icon='fas fa-user'
-        classValue='emailValue form-control border-none radius-50'
-        visibility="input-group-append border-none radius-50" />
+        classValue='emailValue form-control border-none ' />
       <Inputs
-        divInput="input-group form-group radius-50 white"
+        divInput="input-group form-group white border"
         type='password'
         value={password}
         label='Password'
         update={(e) => setPassword(e.target.value)}
         placeholder='Contraseña'
-        icon='fas fa-lock'
-        classValue='passwordValue form-control border-none radius-50'
-        visibility="input-group-append border-none radius-50"
+        classValue='passwordValue form-control border-none'
       />
       <button data-testid='login' type="submit" className='btn btn-color'>Ingresar</button>
       {err && <p data-testid="errMsg" className='pt-3 text-danger'>*{err}</p>}
