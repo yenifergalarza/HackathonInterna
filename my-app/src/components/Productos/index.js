@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-
-
-const Index = (allProducts) => {
-  const [tipo, setTipo] = useState("desayuno");
+import Nav from "../Productos/Nav"
+import ProductBar from "../Productos/ProductBar"
+const Index = () => {
+  const [tipo, setTipo] = useState("ofertas");
   return (
-    <div>
+    <>
+       <Nav/>
+  
     <div className="">
       <button
         onClick={() => {
           setTipo("ofertas");
         }}
         type="button"
-        className="m-1 p-2 btn-amarillo"
+        className="m-1 p-2 btn-danger"
       >
        ofertas
       </button>
@@ -21,7 +23,7 @@ const Index = (allProducts) => {
           setTipo("productos");
         }}
         type="button"
-        className="m-1 p-2 btn-amarillo"
+        className="m-1 p-2 btn-danger"
       >
         Productos
       </button>
@@ -32,12 +34,9 @@ const Index = (allProducts) => {
         </div>
       )}
       {tipo === "productos" && (
-        <div>
-          productos
-        </div>
-      )}
+        <ProductBar></ProductBar>      )}
       
-    </div>
+    </>
   );
 };
 export default Index;

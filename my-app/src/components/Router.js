@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom';
-// import Orders from './Products'
+
 import Login from './Login'
 import Home from './Home'
 
-import Products from '../components/Productos/Products'// import Admin from './Admin/'
+import index from '../components/Productos/index'// import Admin from './Admin/'
 // import ProtectedRoute from '../controller/routes/protected-route'
 // import AdminRoute from '../controller/routes/admin-route'
 
@@ -13,7 +13,7 @@ const Routes = () => {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/login' component={Login} />
-        <Route exact path='/productos' component={Products} />
+        <Route exact path='/productos' component={index} />
         {/* <ProtectedRoute exact path='/cocina' component={Cocina} />
         <AdminRoute exact path='/admin' component={Admin} /> */}
         <Route path='*' component={() => '404 NOT FOUND'} />
