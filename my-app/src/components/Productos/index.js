@@ -89,7 +89,8 @@ const Index = () => {
         </div>
       )}
       {tipo === "productos" && (
-        <ProductBar></ProductBar>      )}
+        <ProductBar></ProductBar>
+        )}
       
     </>
   );
