@@ -19,19 +19,9 @@ a:hover{
   width: 100%;
   height: 90px;
 }
-<<<<<<< HEAD
 .border{
   border: 1px solid #ced4da;
 }
-=======
-.headerProducts {
-  background: #e40421;
-  margin: 0 auto;
-  width: 100%;
-  height: 30%;
-}
-
->>>>>>> 785954ec397d2681e634eaeb11146f096a156df5
 .menu div {
 
   float: left;
