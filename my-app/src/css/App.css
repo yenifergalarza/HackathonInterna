@@ -19,9 +19,19 @@ a:hover{
   width: 100%;
   height: 90px;
 }
+<<<<<<< HEAD
 .border{
   border: 1px solid #ced4da;
 }
+=======
+.headerProducts {
+  background: #e40421;
+  margin: 0 auto;
+  width: 100%;
+  height: 30%;
+}
+
+>>>>>>> 785954ec397d2681e634eaeb11146f096a156df5
 .menu div {
 
   float: left;
@@ -322,6 +332,7 @@ a:hover{
   .container-menu {
     top: 0;
   }
+
 }
 
 @media (min-width: 1216px) {
@@ -329,4 +340,5 @@ a:hover{
     min-width: 480px;
     margin-right: 1em;
   }
+
 }
