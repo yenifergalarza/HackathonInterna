@@ -2,7 +2,8 @@ import React from 'react'
 import logo from '../../img/logo.png';
 import baking from '../../img/baking.jpg'
 import cooking from '../../img/cooking.jpg'
-const Home = () => {
+import auth from '../../controller/routes/auth';
+const Home = ({logprop}) => {
   return (
     <>
       <div className="header d-inline-flex align-items-end">
@@ -18,6 +19,9 @@ const Home = () => {
           </div>
           <div>
             <a href="#">Desarrollo Sostenible</a>
+          </div>
+          <div>
+            <button onClick={()=>{auth.login(() => { logprop.history.push("/login") })}}>Mi Tiendita</button>
           </div>
         </div>
       </div>
