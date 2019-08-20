@@ -1,32 +1,33 @@
 import React from 'react';
 
 
-const EachProducts = (key,name,price,image) => {
+const EachProducts = ({key,name,price,image}) => {
     console.log(name);
   return (
     <>
    
 
-<div class="card col-6"  style={{ maxWidth: "50%" }}   key={key}>
-  <img src={image} class="card-img-top figure-img img-fluid rounded" alt="..."/>
+<div class="card col-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 m-1 "    key={key}>
+  <img src={image} class="card-img-top figure-img img-fluid rounded" /* style={{height: 475+"px"}} */alt="..."/>
   <div class="card-body">
     <h5 class="card-title text-center"> {name}</h5>
     <p class="card-text">{price}</p>
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-secondary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" /> 
+    </div>
+    <div class="btn-group btn-group-sm m-1" role="group"  data-toggle="buttons">
+  <button class="btn btn-danger">
+   
 <i class="fas fa-plus"></i>
 
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option2" autocomplete="off"/>el contador p
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option3" autocomplete="off"/><i class="fas fa-minus"></i>
-  </label>
+  </button>
+  <button class="btn btn-danger ">
+    el contador p
+  </button>
+  <button class="btn btn-danger">
+    <i class="fas fa-minus"></i>
+  </button>
 </div>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+    <button  class="btn btn-danger btn-sm m-1">Compra</button>
+ 
   </div>
       
      
