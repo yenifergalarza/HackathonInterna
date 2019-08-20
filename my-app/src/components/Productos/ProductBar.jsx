@@ -6,9 +6,6 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import firebaseAuth from '../../controller/Firebase/authentication'
 import EachProduct from "../Productos/EachProduct"
  
-
-
-
 const ProductBar = (allProducts) => {
   const [tipo, setTipo] = useState("aceite");
   const [oil] = useCollection(
@@ -17,13 +14,12 @@ const ProductBar = (allProducts) => {
       snapshotListenOptions: { includeMetadataChanges: true }
     }
   );
-
-  const [can] = useCollection(
-    firebaseAuth.firestore().collection("allProducts").where("category", "==", "conservas"),
-    {
-      snapshotListenOptions: { includeMetadataChanges: true }
-    }
-  );
+  // const [can] = useCollection(
+  //   firebaseAuth.firestore().collection("allProducts").where("category", "==", "conservas"),
+  //   {
+  //     snapshotListenOptions: { includeMetadataChanges: true }
+  //   }
+  // );
   return (
     <>
     <div  className="card-group">

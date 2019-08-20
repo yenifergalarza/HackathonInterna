@@ -5,8 +5,6 @@ const EachProducts = (key,name,price,image) => {
     console.log(name);
   return (
     <>
-   
-
 <div class="card col-6"  style={{ maxWidth: "50%" }}   key={key}>
   <img src={image} class="card-img-top figure-img img-fluid rounded" alt="..."/>
   <div class="card-body">
@@ -28,9 +26,6 @@ const EachProducts = (key,name,price,image) => {
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
   </div>
-      
-     
-    
     </>
   )
 }
