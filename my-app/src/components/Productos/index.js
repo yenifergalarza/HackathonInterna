@@ -44,7 +44,7 @@ const Index = () => {
   
     <div className="">
       <button
-        onClick={() => {
+      style={{border: "none"}}        onClick={() => {
           setTipo("ofertas");
         }}
         type="button"
@@ -54,6 +54,7 @@ const Index = () => {
       </button>
 
       <button
+       style={{border: "none"}}  
         onClick={() => {
           setTipo("productos");
         }}
