@@ -1,22 +1,18 @@
 import React, { useState } from 'react'
 import Inputs from '../Input'
-// import getToken from '../../controller/login';
-// import getUser from '../../controller/users/get-user-id';
 import auth from '../../controller/routes/auth';
 
 const RegisterForm = ({ logprop }) => {
   const [dni, setDni] = useState("");
   const [password, setPassword] = useState("");
   const [direccion, setDireccion] = useState("");
-  const [planta, setPlanta] = useState("");
   const [distrito, setDistrito] = useState("");
-  const [err, setErr] = useState("")
 
   return (
     <form 
     onSubmit={ e => {
       e.preventDefault()
-        auth.login(() => { logprop.history.push("/home") })
+          auth.login(() => { logprop.history.push("/productos") })
     }}
       className="col-12 flex-column d-flex form-group" data-testid="form">
 
@@ -44,7 +40,7 @@ const RegisterForm = ({ logprop }) => {
         update={(e) => setDistrito(e.target.value)}
         placeholder='Distrito'
         classValue='emailValue form-control border-none ' />
-        <select class="custom-select input-group form-group white">
+        <select className="custom-select input-group form-group white">
             <option selected>Planta</option>
             <option value="Nicovita">Nicovita</option>
             <option value="Teal">Teal</option>
@@ -61,7 +57,6 @@ const RegisterForm = ({ logprop }) => {
         classValue='passwordValue form-control border-none'
       />
       <button data-testid='login' type="submit" className='btn btn-color'>Registrarme</button>
-      {err && <p data-testid="errMsg" className='pt-3 text-danger'>*{err}</p>}
     </form>
   )
 }
