@@ -10,6 +10,8 @@ import MenuOpts from '../Options'
 const ProductBar = () => {
   const [tipoProductos, setTipoProductos] = useState("aceite");
   const [products1, setProducts1] = useState([...arrayOfProductos]);
+  //const [products2, setProducts2] = useState([...arrayOfProductos]);
+  
   const oil = products1.filter(prod => prod.category ==="aceites");
   const can = products1.filter(prod => prod.category ==="conservas");
   const detergent = products1.filter(prod => prod.category ==="detergentes");
@@ -23,7 +25,9 @@ const ProductBar = () => {
         return (prod.counter = prod.counter + 1);
       }
     });
+    //setProducts1
     return setProducts1(productsNew);
+
   };
 
   //Disminuir cantidad de productos de la lista
@@ -40,6 +44,23 @@ const ProductBar = () => {
     setProducts1(productsNew);
     return products1;
   };
+  // const getTotalGanancia = prodcts => {
+  //   let emptyArray = [];
+  //   let emptyArrayContent = 0;
+  //   let prods =[...prodcts]
+  //   prods.filter( prod =>{
+  //     return prod.counter>0
+  //     })
+  //     prods.forEach(prod => {
+  //     return emptyArray.push(prod.counter * prod.ganancia);
+  //   });
+  
+  //   emptyArray.forEach(prod => {
+  //     return (emptyArrayContent += prod);
+  //   });
+  //   setProducts2(emptyArrayContent)
+  //   return emptyArrayContent;
+  // };
 
   return (
     <>

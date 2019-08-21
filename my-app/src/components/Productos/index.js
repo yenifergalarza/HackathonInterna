@@ -15,6 +15,8 @@ const Index = (props) => {
   const [products, setProducts] = useState([...ofertasArray]);
  
 const [billProducts,setBillProducts]=useState(0);
+const [billProducts2,setBillProducts2]=useState(0);
+
   //Aumentar contidad de productos de la lista
   const addToCart = id => {
     let productsNew = [...products];
@@ -57,6 +59,23 @@ const getTotal = prodcts => {
   setBillProducts(emptyArrayContent)
   return emptyArrayContent;
 };
+const getTotalGanancia = prodcts => {
+  let emptyArray = [];
+  let emptyArrayContent = 0;
+  let prods =[...prodcts]
+  prods.filter( prod =>{
+    return prod.counter>0
+    })
+    prods.forEach(prod => {
+    return emptyArray.push(prod.counter * prod.ganancia);
+  });
+
+  emptyArray.forEach(prod => {
+    return (emptyArrayContent += prod);
+  });
+  setBillProducts2(emptyArrayContent)
+  return emptyArrayContent;
+};
   return (
     <>
        <Header logoutprop={props} cart={<a data-testid='close' onClick={() => {
@@ -65,6 +84,7 @@ const getTotal = prodcts => {
               <Saldo 
                 object={users[0]}
                 total={billProducts}
+                ganancia={billProducts2}
               />
             <div className="fill-available align-items-center absolute top4 d-flex flex-column ">
             <ul className="nav justify-content-center" role="tablist">
@@ -79,6 +99,7 @@ const getTotal = prodcts => {
                     ganancia={prod.ganancia}
                       id={prod.id}
                       total={()=>getTotal(products)}
+                      getTotalGanancia={()=>getTotalGanancia(products)}
                       // addProduct={addProduct}
                       addToCart={addToCart}
                       removeFromCart={removeFromCart}
@@ -93,6 +114,7 @@ const getTotal = prodcts => {
                   {products.map(prod => (
                       <Ofertas
                       total={()=>getTotal(products)}
+                      getTotalGanancia={()=>getTotalGanancia(products)}
                       ganancia={prod.ganancia}
                       id={prod.id}
                       // addProduct={addProduct}
