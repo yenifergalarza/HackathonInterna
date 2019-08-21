@@ -41,12 +41,12 @@ const [billProducts,setBillProducts]=useState(0);
 
 const arrayBillProducts=(productos)=>{
 let prodcts=[...products,{total:0}]
-prodcts.filter( prod =>{
-prod.counter>0
-})
-prodcts.map(prod=>{prod.total=prod.price*prod.counter
+// prodcts.filter( prod =>{
+// prod.counter>0
+// })
+// prodcts.map(prod=>{prod.total=prod.price*prod.counter
 
-});
+// });
 
 setBillProducts()
 }
@@ -54,7 +54,7 @@ setBillProducts()
   return (
     <>
        <Header />
-       <Saldo object={billProducts}/>
+       <Saldo object={users[0]}/>
        <button OnClick={()=>{arrayBillProducts(products)}} ></button>
         <div className="fill-available align-items-center d-flex flex-column ">
             <ul className="nav justify-content-center" role="tablist">
