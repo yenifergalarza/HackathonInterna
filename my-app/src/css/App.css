@@ -14,7 +14,9 @@
 .left{
   text-align:left;
 }
-
+.media{
+  background-color: rgba(0,0,0,.05)
+}
 .footer {
   flex: 1 0 auto;
   flex-shrink: none;

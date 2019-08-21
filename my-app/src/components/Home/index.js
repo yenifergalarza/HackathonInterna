@@ -46,6 +46,13 @@ const Home = (props) => {
           <span className="sr-only">Next</span>
         </a>
       </div>
+      <div class="media py-3">
+        <img src="" class="mr-3"/>
+        <div class="media-body">
+          <h5 class="mt-0">Bienvenid@s</h5>
+          Alicorp reafirma su compromiso de inversión en el Perú con la adquisición de Intradevco
+        </div>
+      </div>
       <Footer />
     </>
   )
