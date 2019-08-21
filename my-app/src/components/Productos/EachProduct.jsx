@@ -1,8 +1,14 @@
 import React from 'react';
 
-
-
-const EachProducts = ({key,name,price,image,producto}) => {
+const EachProducts = ({
+  id,
+  key,
+  name,
+  price,
+  image,
+  counter,
+  addToCart,
+  removeFromCart}) => {
  
   return (
     <>
@@ -18,18 +24,19 @@ const EachProducts = ({key,name,price,image,producto}) => {
           class="btn btn-danger "
           type="button"
           onClick={() => {
+            addToCart(id)
         }}>
           
             <i class="fas fa-plus"></i>
         </button>
-        <button> 
-          
-          el contador p
+        <button class="btn btn-danger "> 
+        {counter}
         </button>
         <button 
           class="btn btn-danger"
           type="button"
           onClick={() => {
+            removeFromCart(id)
           }}>
           <i class="fas fa-minus"></i>
         </button>
