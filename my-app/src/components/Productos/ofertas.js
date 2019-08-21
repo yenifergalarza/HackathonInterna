@@ -1,6 +1,6 @@
-import React from 'react';
+   import React from 'react';
 
-const Ofertas = ({name,id,image,removeFromCart,price,counter,addToCart}) => {
+const Ofertas = ({name,id,image,removeFromCart,price,counter,addToCart, total,getTotalGanancia}) => {
 
   return(
     
@@ -8,7 +8,10 @@ const Ofertas = ({name,id,image,removeFromCart,price,counter,addToCart}) => {
           <img src={image} alt="oferta" ></img>
           <p>{name}</p>
           <div class="btn-group btn-group-sm m-1" role="group"  data-toggle="buttons">
-  <button class="btn btn-danger" onClick={() =>   addToCart (id)}>
+  <button class="btn btn-danger" onClick={() =>   
+  {addToCart(id); 
+  getTotalGanancia(id)}
+  }>
    
 <i class="fas fa-plus"></i>
 
@@ -20,7 +23,7 @@ const Ofertas = ({name,id,image,removeFromCart,price,counter,addToCart}) => {
     <i class="fas fa-minus"></i>
   </button>
 </div>
-<button class="btn btn-danger"  > Añade</button>
+<button class="btn btn-danger" onClick={total} >Agregar al carrito</button>
         </div>
        
     

@@ -17,6 +17,14 @@
 .media{
   background-color: rgba(0,0,0,.05)
 }
+.w-80{
+  width:80%;
+}
+.tiendita{
+  background: #b40312;
+  align-items: center;
+  justify-content: space-evenly;
+}
 .footer {
   flex: 1 0 auto;
   flex-shrink: none;
@@ -40,6 +48,9 @@ a:hover{
 .border{
   border: 1px solid #ced4da;
 }
+.flex{
+  display: flex;
+}
 .menu div {
   float: left;
   padding: 0;
@@ -48,6 +59,17 @@ a:hover{
   height: 35px;
   margin: 0px 0px 0px 3px;
 }
+.p-cart{
+  color: #53B423;
+  font-size: 1em
+}
+.p15{
+  margin: 10% 25% 1%
+}
+.f13{
+  font-size: 13px
+}
+
 .menu div a {
   text-align: center;
   line-height: 35px;
@@ -64,7 +86,31 @@ a:hover{
   color: #6c757da6;
   font-size: x-large;
 }
-
+.fixed{
+  position: fixed;
+  z-index: 1;
+}
+.top{
+  top: 0;
+}
+.top2{
+  top: 75px;
+}
+.top3{
+  top: 115px;
+  background-color: white;
+}
+.top4{
+  top: 156px;
+  background-color: white;
+}
+.logintabs{
+  top: 80px;
+  position: relative;
+}
+.absolute{
+  position: absolute;
+}
 .bars {
   position: absolute;
   right: 0;
@@ -93,6 +139,18 @@ a:hover{
 
 .white-space {
   white-space: inherit;
+}
+.text-inherit{
+  text-align: initial
+}
+.space-between{
+  display: flex;
+  justify-content: space-between
+}
+.b-tb{
+  width: 260px;
+  border-top: 1px solid #c7c3c3;
+  border-bottom: 1px solid #c7c3c3;
 }
 
 .width-100 {
@@ -300,6 +358,11 @@ a:hover{
     flex-wrap: wrap;
     justify-content: center;
   }
+  .flex{
+    display: flex;
+  }
+  
+  
 }
 
 @media (min-width: 768px) {
@@ -326,6 +389,9 @@ a:hover{
     flex-wrap: wrap;
     justify-content: center;
   }
+  .flex{
+    display: flex;
+  }
 }
 
 @media (min-width: 960px) {
@@ -350,6 +416,9 @@ a:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+  }
+  .flex{
+    display: flex;
   }
 }
 

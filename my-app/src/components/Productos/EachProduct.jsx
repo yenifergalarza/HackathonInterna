@@ -8,7 +8,8 @@ const EachProducts = ({
   image,
   counter,
   addToCart,
-  removeFromCart}) => {
+  removeFromCart,
+  getTotalGanancia}) => {
  
   return (
     <>
@@ -24,7 +25,8 @@ const EachProducts = ({
           class="btn btn-danger "
           type="button"
           onClick={() => {
-            addToCart(id)
+        addToCart(id)
+        getTotalGanancia(id)
         }}>
           
             <i class="fas fa-plus"></i>
@@ -41,7 +43,7 @@ const EachProducts = ({
           <i class="fas fa-minus"></i>
         </button>
       </div>
-        <button  class="btn btn-danger btn-sm m-1">Compra</button>
+        <button  class="btn btn-danger btn-sm m-1">Agregar al carrito</button>
     </div>
     </>
   )

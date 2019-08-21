@@ -13,7 +13,8 @@ const Home = (props) => {
         <div className="mb-4 col-6">
           <img src={logo} className="logo" />
         </div>
-        <div className="col-6 col-md-3 col-lg-3">
+        <div className="col-6 col-md-3 text-white d-flex col-lg-3 tiendita">
+          <i class="fas fa-home"></i>
           <a onClick={()=>{auth.login(() => { props.history.push("/login") })}}>Mi Tiendita</a>
         </div>
         </div>
