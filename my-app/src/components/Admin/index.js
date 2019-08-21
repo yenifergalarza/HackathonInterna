@@ -1,11 +1,12 @@
-import React,
-{useEffect} from 'react'
+
 import Chart from 'react-google-charts';
 import Header from '../header'
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { ordersData } from '../../controller/Firebase/authentication';
-import L from 'leaflet';
-import $ from 'jquery'; 
+import React, { useState } from "react";
+
+import Map from "./Map";
+
 const Admin = () => {
     const [value, loading, error] = useCollection(
         ordersData,
@@ -14,109 +15,25 @@ const Admin = () => {
         }
     );
 
-    const reciclaje = [{
-        longitud: -12.130137, 
-        latitud: -77.006225,
-        titulo: "Molino Santa Rosa",
-        parrafo: "Pedro Ruiz 418. Callao",
-    }, {
-        longitud: -12.134081, 
-        latitud: -77.017040,
-        titulo: "Molino Santa Rosa",
-        parrafo: "Pedro Ruiz 418. Callao",
-    }, {
-        longitud: -12.136808, 
-        latitud: -77.007341,
-      titulo: "Molino Santa Rosa",
-        parrafo: "Pedro Ruiz 418. Callao",
-    }, {
-        longitud: -12.135675, 
-        latitud: -77.000173,
-        titulo: "Predio Central Alicorp (Galleter?a Lima, Molino Faucett, Fideer?a Lima, Balanceados, Copsa)",
-        parrafo: "Av. Argentina 4793 Carmen de la Legua Reynoso / Callao.",
-    }, {
-        longitud: -12.151409, 
-        latitud: -77.011031,
-        titulo: "Predio Central Alicorp (Galleter?a Lima, Molino Faucett, Fideer?a Lima, Balanceados, Copsa)",
-        parrafo: "Av. Argentina 4793 Carmen de la Legua Reynoso / Callao.",
-    }, {
-        longitud: -12.168420, 
-        latitud: -76.995281,
-         titulo: "Predio Central Alicorp (Galleter?a Lima, Molino Faucett, Fideer?a Lima, Balanceados, Copsa)",
-        parrafo: "Av. Argentina 4793 Carmen de la Legua Reynoso / Callao.",
-    }, {
-        longitud: -12.171963, 
-        latitud: -76.968893,
-       titulo: "Predio Central Alicorp (Galleter?a Lima, Molino Faucett, Fideer?a Lima, Balanceados, Copsa)",
-        parrafo: "Av. Argentina 4793 Carmen de la Legua Reynoso / Callao.",
-    }, {
-        longitud: -12.064703, 
-        latitud: -77.018675,
-        titulo: "Predio Central Alicorp (Galleter?a Lima, Molino Faucett, Fideer?a Lima, Balanceados, Copsa)",
-        parrafo: "Av. Argentina 4793 Carmen de la Legua Reynoso / Callao.",
-    }, {
-        longitud: -12.008941, 
-        latitud: -77.078783,
-        titulo: "Predio Central Alicorp (Galleter?a Lima, Molino Faucett, Fideer?a Lima, Balanceados, Copsa)",
-        parrafo: "Av. Argentina 4793 Carmen de la Legua Reynoso / Callao.",
-    }, {
-        longitud: -12.046992, 
-        latitud: -77.094595,
-         titulo: "Predio Central Alicorp (Galleter?a Lima, Molino Faucett, Fideer?a Lima, Balanceados, Copsa)",
-        parrafo: "Av. Argentina 4793 Carmen de la Legua Reynoso / Callao.",
-    }, {
-        longitud: -12.198673, 
-        latitud: -76.995690,
-        titulo: "Planta Teal",
-        parrafo: "Av. Nicol?s Ayll?n N? 1179, Ate Vitarte y Metales",
-    }, {
-        longitud: -12.210034, 
-        latitud: -76.976732,
-        titulo: "Planta Teal",
-        parrafo: "Av. Nicol?s Ayll?n N? 1179, Ate Vitarte y Metales",
-    }, {
-        longitud: -12.201717, 
-        latitud: -76.986110,
-        titulo: "Planta Teal",
-        parrafo: "Av. Nicol?s Ayll?n N? 1179, Ate Vitarte y Metales",
-    }, {
-        longitud: -12.095738, 
-        latitud: -77.055440,
-        titulo: "Planta Teal",
-        parrafo: "Av. Nicol?s Ayll?n N? 1179, Ate Vitarte y Metales",
-    }, {
-        longitud: -12.171852, 
-        latitud: -76.971463,
-        titulo: "Planta Teal",
-        parrafo: "Av. Nicol?s Ayll?n N? 1179, Ate Vitarte y Metales",
-    }, {
-        longitud: -12.047541, 
-        latitud: -77.013092,
-        titulo: "Planta Teal",
-        parrafo: "Av. Nicol?s Ayll?n N? 1179, Ate Vitarte y Metales",
-    }, {
-        longitud: -11.983529, 
-        latitud: -77.071369,
-        titulo: "Planta Teal",
-        parrafo: "Av. Nicol?s Ayll?n N? 1179, Ate Vitarte y Metales",
-    }, {
-        longitud: -12.047687, 
-        latitud: -77.125783,
-        titulo: "Planta Teal",
-        parrafo: "Av. Nicol?s Ayll?n N? 1179, Ate Vitarte y Metales",
-    }, {
-        longitud: -12.083847, 
-        latitud: -77.090195,
-        titulo: "Planta Teal",
-        parrafo: "Av. Nicol?s Ayll?n N? 1179, Ate Vitarte y Metales",
-    }, {
-        longitud: -12.129759, 
-        latitud: -76.994037,
-        titulo: "Planta Teal",
-        parrafo: "Av. Nicol?s Ayll?n N? 1179, Ate Vitarte y Metales",
-    }];
 
   
+    const [markersData, setMarkersData] = useState([
+        { latLng: { lat: 49.8419, lng: 24.0315 }, title: 1 }
+      ]);
+    
+      function addMarker() {
+        const lastMarker = markersData[markersData.length - 1];
+    
+        setMarkersData([
+          ...markersData,
+          {
+            title: +lastMarker.title + 1,
+            latLng: {
+              lat: lastMarker.latLng.lat + 0.0001,
+              lng: lastMarker.latLng.lng + 0.0001
+            }
+          }
+        ])}
      
     return (
         <>
@@ -203,23 +120,18 @@ const Admin = () => {
                                 </tbody>
                             </table>)}
                     </div>
-<div class="contenedor">
-         
-          <div class="uk-container uk-margin-top">
-              <div class="uk-grid">
-                <div class="uk-width-1-1">
-                  <div class="uk-panel uk-panel-box uk-panel-box-secondary uk-panel-header">
-                    <h3 class="uk-panel-title">Leaflet Geolocation Simple</h3>
-                    <div id="mapa"></div> 
-                    <button id="locate-position" class="uk-button uk-button-success">geolocalizap<i class="uk-icon-map-marker"></i></button>
-                 
-                  
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-            </div>
+                    <div>
+      <Map markersData={markersData} />
+      <button onClick={addMarker}>Add marker</button>
+      <ul>
+        Markers data:
+        {markersData.map(marker => (
+          <li key={marker.title}>
+            {marker.title}, lat: {marker.latLng.lat}, lng: {marker.latLng.lng},
+          </li>
+        ))}
+      </ul>
+    </div>
                 </div>
             </div>
         </>
