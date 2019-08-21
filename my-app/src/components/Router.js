@@ -17,6 +17,8 @@ const Routes = () => {
         <Route exact path='/productos' component={index} />
         <Route exact path='/reporte' component={Admin} />
         <Route exact path='/cart' component={Carrito} />
+        
+        
         {/* <ProtectedRoute exact path='/cocina' component={Cocina} />
         <AdminRoute exact path='/admin' component={Admin} /> */}
         <Route path='*' component={() => '404 NOT FOUND'} />

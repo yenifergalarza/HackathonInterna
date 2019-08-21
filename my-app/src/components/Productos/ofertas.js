@@ -1,4 +1,4 @@
-import React from 'react';
+   import React from 'react';
 
 const Ofertas = ({name,id,image,removeFromCart,price,counter,addToCart, total}) => {
 

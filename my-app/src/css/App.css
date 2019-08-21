@@ -48,6 +48,9 @@ a:hover{
 .border{
   border: 1px solid #ced4da;
 }
+.flex{
+  display: flex;
+}
 .menu div {
   float: left;
   padding: 0;
@@ -56,6 +59,17 @@ a:hover{
   height: 35px;
   margin: 0px 0px 0px 3px;
 }
+.p-cart{
+  color: #53B423;
+  font-size: 1em
+}
+.p15{
+  margin: 10% 25% 1%
+}
+.f13{
+  font-size: 13px
+}
+
 .menu div a {
   text-align: center;
   line-height: 35px;
@@ -124,6 +138,18 @@ a:hover{
 
 .white-space {
   white-space: inherit;
+}
+.text-inherit{
+  text-align: initial
+}
+.space-between{
+  display: flex;
+  justify-content: space-between
+}
+.b-tb{
+  width: 260px;
+  border-top: 1px solid #c7c3c3;
+  border-bottom: 1px solid #c7c3c3;
 }
 
 .width-100 {
@@ -331,6 +357,11 @@ a:hover{
     flex-wrap: wrap;
     justify-content: center;
   }
+  .flex{
+    display: flex;
+  }
+  
+  
 }
 
 @media (min-width: 768px) {
@@ -357,6 +388,9 @@ a:hover{
     flex-wrap: wrap;
     justify-content: center;
   }
+  .flex{
+    display: flex;
+  }
 }
 
 @media (min-width: 960px) {
@@ -381,6 +415,9 @@ a:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+  }
+  .flex{
+    display: flex;
   }
 }
 
