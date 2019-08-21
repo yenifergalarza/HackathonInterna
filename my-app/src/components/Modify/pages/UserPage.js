@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react'
-import './index.css'
+
 import UserTable from '../tables/UserTable'
 import AddUserForm from '../forms/AddUserForm'
 import EditUserForm from '../forms/EditUserForm'
@@ -9,9 +9,15 @@ export default function UserPage() {
 
   // Data
   const usersData = [
-    { id: 1, name: 'Rocio', direccion: 'chio', distrito: 'chio', planta: 'chio', dni: 'chio', contraseña: 'chio' },
-    { id: 2, name: 'Laboratoria', direccion: 'chio', distrito: 'chio', planta: 'chio', dni: 'chio', contraseña: 'chio' },
-    { id: 3, name: 'Diosito', direccion: 'chio', distrito: 'chio', planta: 'chio', dni: 'chio', contraseña: 'chio' },
+    { id: 1, name: 'Juan', direccion: 'av. 124 mz 5', distrito: 'Lurín', planta: 'Molino Santa Rosa', dni: '71127957', contraseña: '12345' },
+    { id: 2, name: 'Maria', direccion: 'Calle 5 mz 6', distrito: 'SJL', planta: 'Plan callao', dni: 'Planta callao', contraseña: '2345535' },
+    { id: 3, name: 'Roberto', direccion: 'jr chamana lt 5', distrito: 'Villa María', planta: 'Molino Santa Rosa', dni: '75674836', contraseña: '12334' },
+    { id: 4, name: 'Carlos', direccion: 'jr chamana lt 5', distrito: 'Villa María', planta: 'Molino Santa Rosa', dni: '4569984', contraseña: '12334' },
+    { id: 5, name: 'Filomena', direccion: 'jr quillca lt 12', distrito: 'Comas', planta: 'Planta callao', dni: '43456543', contraseña: '12334' },
+    { id: 6, name: 'Judith', direccion: 'calle Gallegos N°243', distrito: 'Ancon', planta: 'Planta Nicovita', dni: '32345655', contraseña: '12334' },
+    { id: 7, name: 'Alex', direccion: 'asoc Marko Jara lt 233', distrito: 'Santa Rosa', planta: 'Planta Nicovita', dni: '7876574', contraseña: '12334' }
+
+
   ]
 
   const initialFormState = { id: null, name: '', direccion: '', distrito: '', planta: '', dni: '', contraseña: '' }

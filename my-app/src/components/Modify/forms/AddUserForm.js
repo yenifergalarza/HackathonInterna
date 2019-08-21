@@ -20,19 +20,28 @@ const AddUserForm = props => {
         setUser(initialFormState)
       }}
     >
+       <div class="form-group">
       <label>Nombre</label>
       <input type="text" name="name" value={user.name} onChange={handleInputChange} />
+</div>
+<div class="form-group"> 
       <label>direccion</label>
-      <input type="text" name="direccion" value={user.direccion} onChange={handleInputChange} />
-      <label>distrito</label>
+      <input type="text" name="direccion" value={user.direccion} onChange={handleInputChange} /></div>
+      <div class="form-group"> 
+      <label  class="form-control"  >distrito</label>
       <input type="text" name="distrito" value={user.distrito} onChange={handleInputChange} />
-      <label>planta</label>
+   </div> <div class="form-group"> 
+      <label class="form-control"  >planta</label>
       <input type="text" name="planta" value={user.planta} onChange={handleInputChange} />
-      <label>dni</label>
+      </div><div class="form-group"> 
+      <label class="form-control"  >dni</label>
       <input type="text" name="dni" value={user.dni} onChange={handleInputChange} />
-      <label>contraseña</label>
+      </div>
+      <div class="form-group"> 
+      <label class="form-control" >contraseña</label>
       <input type="number" name="contraseña" value={user.contraseña} onChange={handleInputChange} />
-      <button>Agregar Usuario</button>
+      </div>
+      <button class="btn btn-danger" >Agregar Usuario</button>
     </form>
   )
 }

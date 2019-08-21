@@ -1,17 +1,16 @@
 import React from 'react'
 
 const UserTable = props => (
-  <div className
-    ="table-responsive">
-    <table>
+  <div className="table-responsive">
+    <table class="table table-sm">
       <thead>
         <tr>
-          <th>Nombre</th>
-          <th>Dirección</th>
-          <th>Distrito</th>
-          <th>Planta</th>
-          <th>DNI</th>
-          <th>Contraseña</th>
+          <th scope="col" >Nombre</th>
+          <th scope="col" >Dirección</th>
+          <th scope="col" >Distrito</th>
+          <th scope="col" >Planta</th>
+          <th scope="col">DNI</th>
+          <th scope="col" >Contraseña</th>
         </tr>
       </thead>
       <tbody>
