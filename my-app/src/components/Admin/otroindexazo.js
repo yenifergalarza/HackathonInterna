@@ -14,22 +14,7 @@ const Admin = () => {
         <>
            <h2>ADMIN</h2> 
             <div>
-      <p>
-        {error && <strong>Error: {JSON.stringify(error)}</strong>}
-        {loading && <span>Collection: Loading...</span>}
-        {value && (
-          <span>
-         
-            {value.docs.map(doc => (
-              <div key={doc.id}>
-                  <img src={doc.data().cart[0].image} alt="img"></img>
-               <h2>{doc.data().name}</h2>
-              </div>
-            ))}
-          </span>
-        )}
-      </p>
-    </div>
+       </div>
         </>
     )
 }
