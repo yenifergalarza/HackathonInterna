@@ -1,4 +1,3 @@
-
 import Chart from 'react-google-charts';
 import Header from '../header'
 import { useCollection } from 'react-firebase-hooks/firestore';
@@ -7,7 +6,7 @@ import React, { useState } from "react";
 
 import Map from "./Map";
 
-const Admin = () => {
+const Admin = (props) => {
     const [value, loading, error] = useCollection(
         ordersData,
         {
@@ -67,53 +66,54 @@ const Admin = () => {
             <Header />
             <div className="container-fluid">  <h5>Hola,name,este es el reporte del mes</h5>
                 <div className="container  col-12 col-sm-12 col-md-12">
-                <div className="container-fluid" style={{"display":"flex","flex-wrap": "wrap"}}>
-                    <Chart className=" col-12 col-sm-12 col-md-12"
-                        width={'300px'}
-                        height={'300px'}
-                        chartType="PieChart"
-                        loader={<div>Loading Chart</div>}
-                        data={[
-                            ['Task', 'Hours per Day'],
-                            ['Detergente', 11],
-                            ['Pasta', 2],
-                            ['Aceite', 2],
-                            ['Conserva', 2],
-                            ['Jabón', 7],
-                        ]}
-                        options={{
-                            title: 'Categoría más Pedida',
-                        }}
-                        rootProps={{ 'data-testid': '1' }}
-                    />
-                    <Chart className=" col-12 col-sm-12 col-md-12"
-                        width={'300px'}
-                        height={'300px'}
-                        chartType="BarChart"
-                        loader={<div>Loading Chart</div>}
-                        data={[
-                            ['Productos', '2019 Population', '2000 Population'],
-                            ['Atún', 8175000, 8008000],
-                            ['Primor', 3792000, 3694000],
-                            ['Opal', 2695000, 2896000],
-                            ['Marcio', 2099000, 1953000],
-                            ['Aceite', 1526000, 1517000],
-                        ]}
-                        options={{
-                            title: 'El producto más Comprado',
-                            chartArea: { width: '50%' },
-                            hAxis: {
-                                title: 'Total Population',
-                                minValue: 0,
-                            },
-                            vAxis: {
-                                title: 'Productos',
-                            },
-                        }}
-                        // For tests
-                        rootProps={{ 'data-testid': '1' }}
-                    />
-                  </div>
+                    <img onClick={() => { props.history.push("/admin") }}  className="redirect" />
+                    <div className="container-fluid" style={{ "display": "flex", "flex-wrap": "wrap" }}>
+                        <Chart className=" col-12 col-sm-12 col-md-12"
+                            width={'300px'}
+                            height={'300px'}
+                            chartType="PieChart"
+                            loader={<div>Loading Chart</div>}
+                            data={[
+                                ['Task', 'Hours per Day'],
+                                ['Detergente', 11],
+                                ['Pasta', 2],
+                                ['Aceite', 2],
+                                ['Conserva', 2],
+                                ['Jabón', 7],
+                            ]}
+                            options={{
+                                title: 'Categoría más Pedida',
+                            }}
+                            rootProps={{ 'data-testid': '1' }}
+                        />
+                        <Chart className=" col-12 col-sm-12 col-md-12"
+                            width={'300px'}
+                            height={'300px'}
+                            chartType="BarChart"
+                            loader={<div>Loading Chart</div>}
+                            data={[
+                                ['Productos', '2019 Population', '2000 Population'],
+                                ['Atún', 8175000, 8008000],
+                                ['Primor', 3792000, 3694000],
+                                ['Opal', 2695000, 2896000],
+                                ['Marcio', 2099000, 1953000],
+                                ['Aceite', 1526000, 1517000],
+                            ]}
+                            options={{
+                                title: 'El producto más Comprado',
+                                chartArea: { width: '50%' },
+                                hAxis: {
+                                    title: 'Total Population',
+                                    minValue: 0,
+                                },
+                                vAxis: {
+                                    title: 'Productos',
+                                },
+                            }}
+                            // For tests
+                            rootProps={{ 'data-testid': '1' }}
+                        />
+                    </div>
                     <div class="table-responsive">
                         {error && <strong>Error: {JSON.stringify(error)}</strong>}
                         {loading && <span>Collection: Loading...</span>}
@@ -137,7 +137,7 @@ const Admin = () => {
                                         <td>{doc.data().name}</td>
                                         <td>{doc.data().dni}</td>
                                         <td>{doc.data().sede}</td>
-                                        <td>{doc.data().cart.map(prod=>(<p>{prod.name}</p>) )}</td>
+                                        <td>{doc.data().cart.map(prod => (<p>{prod.name}</p>))}</td>
                                         <td>{doc.data().bill}</td>
                                         <td >{ Date.now(doc.data().time)} </td>
                                     </tr>
