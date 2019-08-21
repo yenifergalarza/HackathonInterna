@@ -41,7 +41,7 @@ const EachProducts = ({
           <i class="fas fa-minus"></i>
         </button>
       </div>
-        <button  class="btn btn-danger btn-sm m-1">Compra</button>
+        <button  class="btn btn-danger btn-sm m-1">Agregar al carrito</button>
     </div>
     </>
   )

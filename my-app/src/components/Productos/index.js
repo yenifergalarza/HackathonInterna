@@ -7,12 +7,12 @@ import ProductBar from "../Productos/ProductBar"
 import Header from '../header'
 import Saldo from './saldo'
 import MenuOpts from '../Options'
-import auth from '../../controller/routes/auth'
-const Index = (props) => {
+
+const Index = () => {
   const [tipo, setTipo] = useState("ofertas");
   const [products, setProducts] = useState([...ofertasArray]);
  
-
+const [billProducts,setBillProducts]=useState(0);
   //Aumentar contidad de productos de la lista
   const addToCart = id => {
     let productsNew = [...products];
@@ -39,12 +39,30 @@ const Index = (props) => {
     return products;
   };
 
+
+
+const getTotal = prodcts => {
+  let emptyArray = [];
+  let emptyArrayContent = 0;
+  let prods =[...prodcts]
+  prods.filter( prod =>{
+    return prod.counter>0
+    })
+    prods.forEach(prod => {
+    return emptyArray.push(prod.counter * prod.price);
+  });
+
+  emptyArray.forEach(prod => {
+    return (emptyArrayContent += prod);
+  });
+  setBillProducts(emptyArrayContent)
+  return emptyArrayContent;
+};
   return (
     <>
-       <Header logoutprop={props} cart={<a data-testid='close' onClick={() => {
-              auth.logout(() => { props.history.push("/cart") });
-              }} ><i class="fas fa-shopping-cart text-white"></i></a>}/>
-       <Saldo object={users[0]}/>
+       <Header />
+       <Saldo object={users[0]}
+       plata={billProducts}/>
         <div className="fill-available align-items-center d-flex flex-column ">
             <ul className="nav justify-content-center" role="tablist">
               <MenuOpts click={() => {setTipo("ofertas")}} options="Ofertas" aClass="nav-item nav-link active text-color"/>
@@ -56,6 +74,7 @@ const Index = (props) => {
                   {products.map(prod => (
                     <Ofertas
                       id={prod.id}
+                      total={()=>getTotal(products)}
                       // addProduct={addProduct}
                       addToCart={addToCart}
                       removeFromCart={removeFromCart}
