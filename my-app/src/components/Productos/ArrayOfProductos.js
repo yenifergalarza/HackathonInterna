@@ -1,7 +1,7 @@
 export let arrayOfProductos = [
     {
       id: 6,  
-      category: "Aceites",
+      category: "aceites",
       name: "ACEIT.FRIOL SOYA 1LT 12BOT",
       price: 61.65,
       counter: 1,
@@ -9,7 +9,7 @@ export let arrayOfProductos = [
     },
     {
       id: 7,
-      category: "Aceites",
+      category: "aceites",
       name: "ACEIT.PRIMOR 500CC 24BOT",
       price: 92.19,
       counter: 1,
@@ -17,7 +17,7 @@ export let arrayOfProductos = [
     },
     {
         id: 8,
-        category: "Aceites",
+        category: "aceites",
       name: "ACEITE VEG.PRIMOR CORAZON 1LT 12BOT",
       price: 94.51,
       counter: 1,
@@ -25,7 +25,7 @@ export let arrayOfProductos = [
     },
     {
         id: 9,
-        category: "Pastas",
+        category: "pastas",
       name: "ALIANZA X 500GR",
       price: 27.93,
       counter: 1,
@@ -33,7 +33,7 @@ export let arrayOfProductos = [
     },
     {
         id: 10,
-        category: "Aceites",
+        category: "aceites",
       name: "CAPRI X 1LT",
       price: 78.00,
       counter: 1,
@@ -41,7 +41,7 @@ export let arrayOfProductos = [
     },
     {
         id: 11,
-        category: "Aceites",
+        category: "aceites",
       name: "CIL 500CC",
       price: 74.90,
       counter: 1,
@@ -49,7 +49,7 @@ export let arrayOfProductos = [
     },
     {
         id: 12,
-        category: "Aceites",
+        category: "aceites",
       name: "CIL X 1LT",
       price: 66.12,
       counter: 1,
@@ -57,7 +57,7 @@ export let arrayOfProductos = [
     },
     {
         id: 13,
-        category: "Aceites",
+        category: "aceites",
       name: "COCINERO X 1LT",
       price: 69.89,
       counter: 1,
@@ -65,7 +65,7 @@ export let arrayOfProductos = [
     },
     {
         id: 14,
-        category: "Detergentes",
+        category: "detergentes",
       name: "DET.BOLIVAR CON SUAVIZANTE 350GR 30BOL",
       price: 98.50,
       counter: 1,
@@ -73,7 +73,7 @@ export let arrayOfProductos = [
     },
     {
         id: 15,
-        category: "Detergentes",
+        category: "detergentes",
       name: "DET.BOLIVAR CON SUAVIZANTE 500GR 24BOL",
       price: 101.38,
       counter: 1,
@@ -81,7 +81,7 @@ export let arrayOfProductos = [
     },
     {
         id: 16,
-        category: "Detergentes",
+        category: "detergentes",
       name: "DET.BOLIVAR TEC.ACTIVEDUO FL.350GR.30BOL",
       price: 96.60,
       counter: 1,
@@ -89,7 +89,7 @@ export let arrayOfProductos = [
     },
     {
         id: 17,
-        category: "Detergentes",
+        category: "detergentes",
       name: "DET.BOLIVAR TEC.ACTIVEDUO FL.500GR.24BOL",
       price: 97.84,
       counter: 1,
@@ -97,7 +97,7 @@ export let arrayOfProductos = [
     },
     {
         id: 18,
-        category: "Detergentes",
+        category: "detergentes",
       name: "DET.MARSELLA ESENCIAS BOSQUE 500GR.24BOL",
       price: 75.87,
       counter: 1,
@@ -105,7 +105,7 @@ export let arrayOfProductos = [
     },
     {
         id: 19,
-        category: "Detergentes",
+        category: "detergentes",
       name: "DET.MARSELLA PETALOS RELAJANT 350G 30BOL",
       price: 69.10,
       counter: 1,
@@ -113,7 +113,7 @@ export let arrayOfProductos = [
     },
     {
         id: 20,
-        category: "Detergentes",
+        category: "detergentes",
       name: "DETERGENTE OPAL ADVANCE  4.5KG 4BOL",
       price: 129.00,
       counter: 1,
@@ -121,7 +121,7 @@ export let arrayOfProductos = [
     },
     {
         id: 21,
-        category: "Detergentes",
+        category: "detergentes",
       name: "DETERGENTE OPAL SPORT 350GR.30BOL",
       price: 77.10,
       counter: 1,
@@ -129,7 +129,7 @@ export let arrayOfProductos = [
     },
     {
         id: 22,
-        category: "Detergentes",
+        category: "detergentes",
       name: "DETERGENTE OPAL SPORT 500GR.24BOL",
       price: 81.98,
       counter: 1,
@@ -137,7 +137,7 @@ export let arrayOfProductos = [
     },
     {
         id: 23,
-        category: "Detergentes",
+        category: "detergentes",
       name: "DETERGENTE OPAL SPORT 800GR.15BOL",
       price: 87.82,
       counter: 1,
@@ -145,7 +145,7 @@ export let arrayOfProductos = [
     },
     {
         id: 24,
-        category: "Pastas",
+        category: "pastas",
       name: "Don Vittorio Cabello Angel 250 gr",
       price: 47.44,
       counter: 1,
@@ -153,7 +153,7 @@ export let arrayOfProductos = [
     },
     {
         id: 25,
-        category: "Pastas",
+        category: "pastas",
       name: "FID.DON VITTORIO SPAGHETTI 500GR 20BOL",
       price: 47.08,
       counter: 1,
@@ -161,7 +161,7 @@ export let arrayOfProductos = [
     },
     {
         id: 26,
-        category: "Conservas",
+        category: "conservas",
       name: "FILETE ATUN PRIMOR 170GR 48LTA",
       price: 20433,
       counter: 1,
@@ -169,7 +169,7 @@ export let arrayOfProductos = [
     },
     {
         id: 27,
-        category: "Jabones",
+        category: "jabones",
       name: "JAB. BOLIVAR GENERACION BB 210GR.48BRR",
       price: 79.03,
       counter: 1,
@@ -177,7 +177,7 @@ export let arrayOfProductos = [
     },
     {
         id: 28,
-        category: "Jabones",
+        category: "jabones",
       name: "JAB.BOLIV.ANTIBACTERIAL 210G.48BRR",
       price: 78.52,
       counter: 1,
@@ -185,7 +185,7 @@ export let arrayOfProductos = [
     },
     {
         id: 29,
-        category: "Jabones",
+        category: "jabones",
       name: "JAB.BOLIV.PER.BLA.FLORAL 210GR.48BRR",
       price: 79.01,
       counter: 1,
@@ -193,7 +193,7 @@ export let arrayOfProductos = [
     },
     {
         id: 30,
-        category: "Jabones",
+        category: "jabones",
       name: "JAB.BOLIV.PER.BLA.LIMON 210GR.48BRR",
       price: 79.10,
       counter: 1,
@@ -201,7 +201,7 @@ export let arrayOfProductos = [
     },
     {
         id: 31,
-        category: "Jabones",
+        category: "jabones",
       name: "JABON MARSELLA FLORAL 220GR 40BRR",
       price: 60.64,
       counter: 1,
@@ -209,7 +209,7 @@ export let arrayOfProductos = [
     },
     {
         id: 32,
-        category: "Jabones",
+        category: "jabones",
       name: "JABON MARSELLA LIMON 220GR 40BRR",
       price: 60.00,
       counter: 1,
@@ -217,7 +217,7 @@ export let arrayOfProductos = [
     },
     {
         id: 33,
-        category: "Pastas",
+        category: "pastas",
       name: "Lavaggi Tallarin 500 gr",
       price: 35.99,
       counter: 1,
@@ -225,7 +225,7 @@ export let arrayOfProductos = [
     },
     {
         id: 34,
-        category: "Pastas",
+        category: "pastas",
       name: "NICOLINI X 500GR SPAGHETTI",
       price: 29.00,
       counter: 1,
@@ -233,7 +233,7 @@ export let arrayOfProductos = [
     },
     {
         id: 35,
-        category: "Pastas",
+        category: "pastas",
       name: "NICOLINI X 500GR TALLARÍN",
       price: 29.00,
       counter: 1,
@@ -241,7 +241,7 @@ export let arrayOfProductos = [
     },
     {
         id: 36,
-        category: "Pastas",
+        category: "pastas",
       name: "NU.FID.DON VITTORIO COD.RAY.250G 20BOL",
       price: 23.77,
       counter: 1,
@@ -249,7 +249,7 @@ export let arrayOfProductos = [
     },
     {
         id: 37,
-        category: "Detergentes",
+        category: "detergentes",
       name: "NUE DET OPAL ULTRA C/QUITAMA 350GR 30BOL",
       price: 85.86,
       counter: 1,
@@ -257,7 +257,7 @@ export let arrayOfProductos = [
     },
     {
         id: 38,
-        category: "Detergentes",
+        category: "detergentes",
       name: "NUE DET OPAL ULTRA C/QUITAMA 500GR 24BOL",
       price: 90.66,
       counter: 1,
@@ -265,7 +265,7 @@ export let arrayOfProductos = [
     },
     {
         id: 39,
-        category: "Detergentes",
+        category: "detergentes",
       name: "NUE DETERGENTE OPAL ADVANCE 350G 30BOL",
       price: 76.20,
       counter: 1,
@@ -273,7 +273,7 @@ export let arrayOfProductos = [
     },
     {
         id: 40,
-        category: "Detergentes",
+        category: "detergentes",
       name: "NUE DETERGENTE OPAL ADVANCE 500G 24BOL",
       price: 81.47,
       counter: 1,
@@ -281,7 +281,7 @@ export let arrayOfProductos = [
     },
     {
         id: 41,
-        category: "Detergentes",
+        category: "detergentes",
       name: "NUE DETERGENTE OPAL ADVANCE 800G 15BOL",
       price: 87.36,
       counter: 1,
@@ -289,7 +289,7 @@ export let arrayOfProductos = [
     },
     {
         id: 42,
-        category: "Detergentes",
+        category: "detergentes",
       name: "NUE DETERGENTE OPAL ULTRA 1.5KG 8BOL",
       price: 90.48,
       counter: 1,
@@ -297,7 +297,7 @@ export let arrayOfProductos = [
     },
     {
         id: 43,
-        category: "Detergentes",
+        category: "detergentes",
       name: "NUE DETERGENTE OPAL ULTRA 2.6KG 7BOL",
       price: 142.95,
       counter: 1,
@@ -305,7 +305,7 @@ export let arrayOfProductos = [
     },
     {
         id: 44,
-        category: "Detergentes",
+        category: "detergentes",
       name: "NUE DETERGENTE OPAL ULTRA 4.5KG 4BOL",
       price: 130.25,
       counter: 1,
@@ -313,7 +313,7 @@ export let arrayOfProductos = [
     },
     {
         id: 45,
-        category: "Detergentes",
+        category: "detergentes",
       name: "NUE DETERGENTE OPAL ULTRA 800GR 15BOL",
       price: 86.59,
       counter: 1,
@@ -321,7 +321,7 @@ export let arrayOfProductos = [
     },
     {
         id: 46,
-        category: "Aceites",
+        category: "aceites",
       name: "PRIMOR CLASICO X 1LT",
       price: 75.75,
       counter: 1,
@@ -329,7 +329,7 @@ export let arrayOfProductos = [
     },
     {
         id: 47,
-        category: "Aceites",
+        category: "aceites",
       name: "PRIMOR PREMIUM X 1LT",
       price: 83.45,
       counter: 1,
@@ -337,7 +337,7 @@ export let arrayOfProductos = [
     },
     {
         id: 48,
-        category: "Conservas",
+        category: "conservas",
       name: "SOLIDO ATUN PRIMOR 170GR 48LTA",
       price: 194.00,
       counter: 1,
@@ -345,7 +345,7 @@ export let arrayOfProductos = [
     },
     {
         id: 49,
-        category: "Conservas",
+        category: "conservas",
       name: "TROZOS ATUN PRIMOR 170GR 48LTA",
       price: 189.33,
       counter: 1,
