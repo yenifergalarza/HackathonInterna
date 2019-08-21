@@ -12,7 +12,7 @@ const EachProducts = ({
  
   return (
     <>
-    <div class="card col-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 m-1 "    key={key}>
+    <div class="card col-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 m-1 " key={key}>
       <img src={image} class="card-img-top figure-img img-fluid rounded" /* style={{height: 475+"px"}} */alt="..."/>
       <div class="card-body">
         <h5 class="card-title text-center"> {name}</h5>

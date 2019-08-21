@@ -6,6 +6,7 @@ export const users=[{
         dirección: 'Jirón Enrique León 518',
         distrito: 'SJL',
         planta: 'Sidsur',
+        saldo: '400',
         password: 'abcd123ABC'
 },
 {
