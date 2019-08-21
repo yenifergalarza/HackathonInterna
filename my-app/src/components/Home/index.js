@@ -3,6 +3,7 @@ import logo from '../../img/logo.png';
 import baking from '../../img/baking.jpg'
 import cooking from '../../img/cooking.jpg'
 import auth from '../../controller/routes/auth';
+import{Link} from "react-router-dom"
 import Footer from '../footer'
 const Home = (props) => {
   return (
@@ -19,6 +20,9 @@ const Home = (props) => {
         <div className="menu mt-2 col-12 d-flex p-0 justify-content-evenly">
           <div className="col-4 col-md-3 col-lg-3">
             <a href="#">Nosotros</a>
+          </div>
+          <div className="col-4 col-md-3 col-lg-3">
+            <a href="../chatbot/index.html"  target="_blank" >Chatea</a>
           </div>
           <div className="col-4 col-md-3 col-lg-3">
             <a href="#">Marcas</a>

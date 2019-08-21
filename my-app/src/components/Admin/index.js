@@ -18,8 +18,35 @@ const Admin = () => {
 
   
     const [markersData, setMarkersData] = useState([
-        { latLng: { lat: 49.8419, lng: 24.0315 }, title: 1 }
-      ]);
+        { latLng: { lat: -12.130137, lng:-77.006225}, title: "Molino Santa Rosa" },
+{ latLng: { lat:-12.134081, lng: -77.017040}, title: "Molino Santa Rosa" },
+{ latLng: { lat: -12.136808, lng:  -77.007341 }, title: "Molino Santa Rosa" },
+
+{ latLng: { lat: -12.135675, lng: -77.000173}, title: "Predio Central Alicorp (Galleter?a Lima, Molino Faucett, Fideer?a Lima, Balanceados, Copsa" },
+{ latLng: { lat: -12.151409, lng: -77.011031}, title: "Predio Central Alicorp (Galleter?a Lima, Molino Faucett, Fideer?a Lima, Balanceados, Copsa" },
+
+{ latLng: { lat: -12.168420, lng:  -76.995281}, title: "Predio Central Alicorp (Galleter?a Lima, Molino Faucett, Fideer?a Lima, Balanceados, Copsa" },
+{ latLng: { lat:  -12.171963, lng: -76.968893}, title: "Predio Central Alicorp (Galleter?a Lima, Molino Faucett, Fideer?a Lima, Balanceados, Copsa" },
+{ latLng: { lat: 12.064703, lng: -77.018675}, title: "Predio Central Alicorp (Galleter?a Lima, Molino Faucett, Fideer?a Lima, Balanceados, Copsa" }
+
+,{ latLng: { lat: -12.008941, lng: -77.078783}, title: "Predio Central Alicorp (Galleter?a Lima, Molino Faucett, Fideer?a Lima, Balanceados, Copsa" }
+
+,{ latLng: { lat: -12.046992, lng: -77.094595}, title: "Predio Central Alicorp (Galleter?a Lima, Molino Faucett, Fideer?a Lima, Balanceados, Copsa" }
+
+,{ latLng: { lat: -12.198673, lng: -76.995690}, title: "Predio Central Alicorp (Galleter?a Lima, Molino Faucett, Fideer?a Lima, Balanceados, Copsa" }
+
+,{ latLng: { lat:  -12.008941, lng: -77.078783}, title: "Predio Central Alicorp (Galleter?a Lima, Molino Faucett, Fideer?a Lima, Balanceados, Copsa" },
+{ latLng: { lat: -12.210034, lng: -76.976732}, title: "Molino Callao" },
+{ latLng: { lat: -12.201717, lng:  -76.986110}, title: "Molino Callao" },
+{ latLng: { lat:-12.095738, lng: -77.055440}, title: "Molino Callao" }, 
+ 
+{ latLng: { lat:  -12.171852, lng: -76.971463}, title: "Molino Callao" },  
+{ latLng: { lat:  -12.047541, lng: -77.013092}, title: "Molino Callao" },  
+    { latLng: { lat: -11.983529, lng: -77.071369}, title: "Molino Callao" },
+    { latLng: { lat: -12.047687, lng: -77.125783}, title: "Molino Callao" },
+   { latLng: { lat: -12.083847, lng: -77.090195}, title: "Molino Callao" },
+   { latLng: { lat: -12.129759, lng: -76.994037}, title: "Molino Callao" }
+]);
     
       function addMarker() {
         const lastMarker = markersData[markersData.length - 1];
@@ -112,7 +139,7 @@ const Admin = () => {
                                         <td>{doc.data().sede}</td>
                                         <td>{doc.data().cart.map(prod=>(<p>{prod.name}</p>) )}</td>
                                         <td>{doc.data().bill}</td>
-                                        <td>{doc.data().name}</td>
+                                        <td >{ Date.now(doc.data().time)} </td>
                                     </tr>
 
 
