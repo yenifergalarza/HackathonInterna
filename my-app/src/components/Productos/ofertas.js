@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Ofertas = ({name,id,image,addToCart,removeFromCart,price,counter,addProduct}) => {
+const Ofertas = ({name,id,image,removeFromCart,price,counter,addToCart}) => {
 
   return(
     
@@ -8,7 +8,7 @@ const Ofertas = ({name,id,image,addToCart,removeFromCart,price,counter,addProduc
           <img src={image} alt="oferta" ></img>
           <p>{name}</p>
           <div class="btn-group btn-group-sm m-1" role="group"  data-toggle="buttons">
-  <button class="btn btn-danger" onClick={() => addToCart(id)}>
+  <button class="btn btn-danger" onClick={() =>   addToCart (id)}>
    
 <i class="fas fa-plus"></i>
 
@@ -20,7 +20,7 @@ const Ofertas = ({name,id,image,addToCart,removeFromCart,price,counter,addProduc
     <i class="fas fa-minus"></i>
   </button>
 </div>
-<button class="btn btn-danger"  onClick={() =>   addProduct (id, name, price, counter)} > Añade</button>
+<button class="btn btn-danger"  > Añade</button>
         </div>
        
     

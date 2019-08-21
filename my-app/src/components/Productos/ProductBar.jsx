@@ -45,7 +45,7 @@ const ProductBar = () => {
       snapshotListenOptions: { includeMetadataChanges: true }
     }
   );
-
+  
   return (
     <>
     <div  className="">

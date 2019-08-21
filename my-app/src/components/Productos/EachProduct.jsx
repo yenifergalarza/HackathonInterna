@@ -1,16 +1,9 @@
-import React,{useState} from 'react';
-import {firebaseAuth} from '../../controller/Firebase/authentication'
-import { useCollection } from "react-firebase-hooks/firestore";
+import React from 'react';
 
-import {agregarProducto,
-  eliminarProducto,
-  disminuirCntd
-} from '../../controller/productos/productos'
 
 
 const EachProducts = ({key,name,price,image,producto}) => {
-  const [pedidos, setPedidos] = useState([]);
-  
+ 
   return (
     <>
     <div class="card col-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 m-1 "    key={key}>
@@ -25,7 +18,6 @@ const EachProducts = ({key,name,price,image,producto}) => {
           class="btn btn-danger "
           type="button"
           onClick={() => {
-            setPedidos(agregarProducto(producto, pedidos))
         }}>
           
             <i class="fas fa-plus"></i>
@@ -38,7 +30,6 @@ const EachProducts = ({key,name,price,image,producto}) => {
           class="btn btn-danger"
           type="button"
           onClick={() => {
-            setPedidos(agregarProducto(producto, pedidos))
           }}>
           <i class="fas fa-minus"></i>
         </button>

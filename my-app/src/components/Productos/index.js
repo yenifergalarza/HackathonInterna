@@ -11,12 +11,12 @@ import ProductBar from "../Productos/ProductBar"
 
 const Index = () => {
   const [tipo, setTipo] = useState("ofertas");
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([...ofertasArray]);
   //Añadir productos a la lista
-  const addProduct = (id, title, price, counter) => {
-    const newProducts = [...products, { id, title, price, counter }];
-    setProducts(newProducts);
-  };
+  // const addProduct = (id, title, price, counter) => {
+  //   const newProducts = [...products, { id, title, price, counter }];
+  //   setProducts(newProducts);
+  // };
 
   //Aumentar contidad de productos de la lista
   const addToCart = id => {
@@ -73,15 +73,15 @@ const Index = () => {
       </div>
       {tipo === "ofertas" && (
          <div className="wrap ">
-           {ofertasArray.map(prod => (
+           {products.map(prod => (
                <Ofertas
                id={prod.id}
-              addProduct={addProduct}
+              // addProduct={addProduct}
                addToCart={addToCart}
           removeFromCart={removeFromCart}
                  name={prod.name}
                price={prod.price}  
-               image={prod.images}
+               image={prod.image}
                counter={prod.counter}
                
                ></Ofertas>
