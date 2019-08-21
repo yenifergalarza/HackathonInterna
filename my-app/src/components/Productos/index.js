@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import {ofertasArray} from "../../components/Productos/ArrayOfOfertas"
-import Ofertas from "../Productos/ofertas"/* 
-import oferta1 from "../../img/CardOferta.svg"
-import oferta2 from "../../img/CardOferta2.svg"
-import oferta3 from "../../img/CardOferta3.svg"
-import oferta4 from "../../img/CardOferta4.svg"
-import oferta5 from "../../img/CardOferta5.svg" */
+import Ofertas from "../Productos/ofertas"
 import Nav from "../Productos/Nav"
 import ProductBar from "../Productos/ProductBar"
 

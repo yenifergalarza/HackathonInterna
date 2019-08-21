@@ -3,6 +3,7 @@ import logo from '../../img/logo.png';
 import baking from '../../img/baking.jpg'
 import cooking from '../../img/cooking.jpg'
 import auth from '../../controller/routes/auth';
+import Footer from '../footer'
 const Home = (props) => {
   return (
     <>
@@ -30,10 +31,10 @@ const Home = (props) => {
       <div id="carouselExampleControls" className="carousel slide w-100" data-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src={baking} class="d-block w-100" alt="..." />
+            <img src={baking} className="d-block w-100" alt="..." />
           </div>
           <div className="carousel-item">
-            <img src={cooking} class="d-block w-100" alt="..." />
+            <img src={cooking} className="d-block w-100" alt="..." />
           </div>
         </div>
         <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -45,6 +46,7 @@ const Home = (props) => {
           <span className="sr-only">Next</span>
         </a>
       </div>
+      <Footer />
     </>
   )
 }
