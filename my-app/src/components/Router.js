@@ -10,15 +10,15 @@ import index from '../components/Productos/index'// import Admin from './Admin/'
 
 const Routes = () => {
   return (
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/productos' component={index} />
-        <Route exact path='/reporte' component={Admin} />
-        {/* <ProtectedRoute exact path='/cocina' component={Cocina} />
+    <Switch>
+      <Route exact path='/' component={Home} />
+      <Route exact path='/login' component={Login} />
+      <Route exact path='/productos' component={index} />
+      <Route exact path='/reporte' component={Admin} />
+      {/* <ProtectedRoute exact path='/cocina' component={Cocina} />
         <AdminRoute exact path='/admin' component={Admin} /> */}
-        <Route path='*' component={() => '404 NOT FOUND'} />
-      </Switch>
+      <Route path='*' component={() => '404 NOT FOUND'} />
+    </Switch>
 
   )
 }
