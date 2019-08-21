@@ -5,7 +5,7 @@ import { useCollection } from "react-firebase-hooks/firestore";
 
 import {productsData} from '../../controller/Firebase/authentication'
 import EachProduct from "../Productos/EachProduct"
- 
+import MenuOpts from '../Options'
 
 
 
@@ -48,56 +48,24 @@ const ProductBar = () => {
   
   return (
     <>
-    <div  className="">
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-   <button
-        onClick={() => {
-          setTipoProductos("aceite");
-        }}
-        type="button"
-        className="  btn btn-danger"
-      >
-       aceite
-      </button>
-
-      <button
-        onClick={() => {
-          setTipoProductos("conservas");
-        }}
-        type="button"
-        className=" btn btn-danger"
-      >
-        conservas
-      </button>
-         <button
-        onClick={() => {
-          setTipoProductos("detergente");
-        }}
-        type="button"
-        className=" btn btn-danger"
-      >
-        detergente
-      </button>
-          <button
-        onClick={() => {
-          setTipoProductos("jabones");
-        }}
-        type="button"
-        className="  btn btn-danger"
-      >
-        jabones
-      </button>
-         <button
-        onClick={() => {
-          setTipoProductos("pastas");
-        }}
-        type="button"
-        className=" btn btn-danger"
-      >
-        pastas
-      </button>
-</div>
-      </div>
+            <div className="fill-available align-items-center d-flex flex-column ">
+            <ul className="nav nav-tabs justify-content-center" role="tablist">
+            <li className="nav-item">
+            <MenuOpts click={() => {setTipoProductos("aceite")}} options="Aceites" aClass="nav-link active text-color"/>
+            </li>
+            <li className="nav-item">
+              <MenuOpts click={() => {setTipoProductos("conservas")}} options="Conservas" aClass="nav-link text-color" />
+            </li>
+            <li className="nav-item">
+            <MenuOpts click={() => {setTipoProductos("detergente")}} options="Detergentes" aClass="nav-link text-color" />
+            </li >
+            <li className="nav-item">
+            <MenuOpts click={() => {setTipoProductos("jabones")}} options="Jabones" aClass=" nav-link  text-color" />
+            </li>
+            <li className="nav-item">
+            <MenuOpts click={() => {setTipoProductos("pastas")}} options="Pastas" aClass="nav-link text-color" />
+            </li>
+            </ul>
       <div>
       {error && <strong>Error: {JSON.stringify(error)}</strong>}
             {loading && (
@@ -241,7 +209,7 @@ const ProductBar = () => {
       )}
       </div>
      
-    
+    </div>
     
     
     </>

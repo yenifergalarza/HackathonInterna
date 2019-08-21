@@ -10,6 +10,7 @@ import oferta5 from "../../img/CardOferta5.svg"
 import Header from "../header"
 import MenuOpts from '../Options'
 import Nav from "../Productos/Nav"
+import { users } from '../../controller/users';
 import ProductBar from "../Productos/ProductBar"
 
 const Index = () => {
@@ -51,7 +52,7 @@ const Index = () => {
   return (
     <>
        <Header />
-       <Saldo />
+       <Saldo object={users}/>
         <div className="fill-available align-items-center d-flex flex-column ">
             <ul className="nav justify-content-center" role="tablist">
               <MenuOpts click={() => {setTipo("ofertas")}} options="Ofertas" aClass="nav-item nav-link active text-color"/>

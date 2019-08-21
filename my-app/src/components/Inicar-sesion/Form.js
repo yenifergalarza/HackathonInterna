@@ -13,6 +13,12 @@ const Form = ({logprop}) => {
     onSubmit={ e => {
       e.preventDefault()
       if(users.find(o => o.dni === dni && o.admin===false)){
+        const newusers = users.map((e)=>{
+          if(e.admin===false){
+            return {dni:e.dni, name:e.name, saldo:e.saldo}
+          }
+        })
+        localStorage.setItem('activeUser', JSON.stringify(newusers))
         return auth.login(() => { logprop.history.push("/productos") })
       }else if(users.find(o => o.dni === dni && o.admin===true)){
         return auth.login(() => { logprop.history.push("/reporte") })
