@@ -1,24 +1,28 @@
 import React from 'react';
 
-const Ofertas = ({oferta1, oferta2, oferta3, oferta4, oferta5}) => {
+const Ofertas = ({name,id,image,removeFromCart,price,counter,addToCart}) => {
+
   return(
-      <div className="wrap ">
+    
         <div className="m-3">
-          <img src={oferta1}></img>
+          <img src={image} alt="oferta" ></img>
+          <p>{name}</p>
+          <div class="btn-group btn-group-sm m-1" role="group"  data-toggle="buttons">
+  <button class="btn btn-danger" onClick={() =>   addToCart (id)}>
+   
+<i class="fas fa-plus"></i>
+
+  </button>
+  <button class="btn btn-danger " > 
+    {counter}
+  </button>
+  <button class="btn btn-danger"  onClick={() => removeFromCart(id)} >
+    <i class="fas fa-minus"></i>
+  </button>
+</div>
+<button class="btn btn-danger"  > Añade</button>
         </div>
-        <div className="m-3">
-          <img src={oferta2}></img>
-        </div>
-        <div className="m-3">
-          <img src={oferta3}></img>
-        </div>
-        <div className="m-3">
-          <img src={oferta4}></img>
-        </div>
-        <div className="m-3">
-          <img src={oferta5}></img>
-        </div>
-      </div>
+       
     
   )
 }
