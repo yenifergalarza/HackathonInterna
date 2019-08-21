@@ -3,6 +3,7 @@ import logo from '../../img/logo.png';
 import baking from '../../img/baking.jpg'
 import cooking from '../../img/cooking.jpg'
 import auth from '../../controller/routes/auth';
+import Footer from '../footer'
 const Home = (props) => {
   return (
     <>
@@ -45,6 +46,7 @@ const Home = (props) => {
           <span className="sr-only">Next</span>
         </a>
       </div>
+      <Footer />
     </>
   )
 }

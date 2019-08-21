@@ -5,6 +5,23 @@
 .text-color{
   color: #858585;
 }
+.green{
+  background-color: #53B423;
+}
+.border-green{
+  border: 1px solid #53B423;
+}
+.left{
+  text-align:left;
+}
+.footer {
+  flex: 1 0 auto;
+  flex-shrink: none;
+  background-color: #ccc;
+}
+.nosotros{
+  border-right: 2px solid #757575;
+}
 a:hover{
   color:#E40421;
   border-bottom: 1px solid #53B423;

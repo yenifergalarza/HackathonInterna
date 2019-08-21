@@ -3,6 +3,7 @@ import Iniciar from '../Inicar-sesion';
 import Registro from '../Registro/index';
 import MenuOpts from '../Options'
 import Header from '../header'
+import Footer from '../footer'
 const Login = (props) => {
     const [type, setType] = useState('Iniciar Sesión')
 
@@ -19,10 +20,11 @@ const Login = (props) => {
                 <Iniciar props={props}/>
               )}
               {type === 'Registrarse' && (
-                <Registro  />
+                <Registro props={props} />
               )}
             </div>
         </div>
+        <Footer />
 </>
     )
 }
