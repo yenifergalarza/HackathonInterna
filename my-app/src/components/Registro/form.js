@@ -4,6 +4,7 @@ import auth from '../../controller/routes/auth';
 
 const RegisterForm = ({ logprop }) => {
   const [dni, setDni] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [direccion, setDireccion] = useState("");
   const [distrito, setDistrito] = useState("");
@@ -15,7 +16,14 @@ const RegisterForm = ({ logprop }) => {
           auth.login(() => { logprop.history.push("/productos") })
     }}
       className="col-12 flex-column d-flex form-group" data-testid="form">
-
+      <Inputs
+        divInput="input-group form-group white border"
+        type='text'
+        value={name}
+        label='Name'
+        update={(e) => setName(e.target.value)}
+        placeholder='Nombre'
+        classValue='emailValue form-control border-none'/>
       <Inputs
         divInput="input-group form-group white border"
         type='number'

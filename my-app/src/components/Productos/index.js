@@ -7,7 +7,8 @@ import ProductBar from "../Productos/ProductBar"
 import Header from '../header'
 import Saldo from './saldo'
 import MenuOpts from '../Options'
-const Index = () => {
+import auth from '../../controller/routes/auth'
+const Index = (props) => {
   const [tipo, setTipo] = useState("ofertas");
   const [products, setProducts] = useState([...ofertasArray]);
  
@@ -40,7 +41,9 @@ const Index = () => {
 
   return (
     <>
-       <Header />
+       <Header logoutprop={props} cart={<a data-testid='close' onClick={() => {
+              auth.logout(() => { props.history.push("/cart") });
+              }} ><i class="fas fa-shopping-cart text-white"></i></a>}/>
        <Saldo object={users[0]}/>
         <div className="fill-available align-items-center d-flex flex-column ">
             <ul className="nav justify-content-center" role="tablist">
