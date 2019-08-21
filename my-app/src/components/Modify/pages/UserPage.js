@@ -3,18 +3,18 @@ import './index.css'
 import UserTable from '../tables/UserTable'
 import AddUserForm from '../forms/AddUserForm'
 import EditUserForm from '../forms/EditUserForm'
-
+import Header from '../../../components/header'
 
 export default function UserPage() {
 
   // Data
   const usersData = [
-    { id: 1, name: 'Rocio', username: 'chio' },
-    { id: 2, name: 'Laboratoria', username: 'labo' },
-    { id: 3, name: 'Diosito', username: 'diosito' },
+    { id: 1, name: 'Rocio', direccion: 'chio', distrito: 'chio', planta: 'chio', dni: 'chio', contraseña: 'chio' },
+    { id: 2, name: 'Laboratoria', direccion: 'chio', distrito: 'chio', planta: 'chio', dni: 'chio', contraseña: 'chio' },
+    { id: 3, name: 'Diosito', direccion: 'chio', distrito: 'chio', planta: 'chio', dni: 'chio', contraseña: 'chio' },
   ]
 
-  const initialFormState = { id: null, name: '', username: '' }
+  const initialFormState = { id: null, name: '', direccion: '', distrito: '', planta: '', dni: '', contraseña: '' }
 
   // Setting state
   const [users, setUsers] = useState(usersData)
@@ -42,13 +42,13 @@ export default function UserPage() {
   const editRow = user => {
     setEditing(true)
 
-    setCurrentUser({ id: user.id, name: user.name, username: user.username })
+    setCurrentUser({ id: user.id, name: user.name, direccion: user.direccion, distrito: user.distrito, planta: user.planta, dni: user.dni, contraseña: user.contraseña })
   }
 
   return (
 
     <div className="container">
-
+      <Header />
       <div className="flex-row">
         <div className="flex-large">
           {editing ? (

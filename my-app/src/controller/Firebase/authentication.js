@@ -16,3 +16,5 @@ export  const firebaseAuth = firebase.initializeApp(firebaseConfig);
 const firestore = firebase.firestore();
 
 export const productsData = firestore.collection("allProducts");
+
+export const ordersData = firestore.collection("pedidos");
