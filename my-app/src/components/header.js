@@ -4,7 +4,8 @@ import auth from '../controller/routes/auth'
 import header from '../img/header.jpeg'
 const Header = ({ logoutprop, cart }) => {
   return (
-    <header data-testid="header" className="width-100 d-flex">
+    // className="width-100 d-flex"
+    <header data-testid="header" className='width-100 d-flex fixed top'>
         <img src={header} alt="img" className="w-100" />
 
         <ul className="width-100 nav nav-tabs justify-content-center">

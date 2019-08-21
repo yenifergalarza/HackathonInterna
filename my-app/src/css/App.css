@@ -72,7 +72,30 @@ a:hover{
   color: #6c757da6;
   font-size: x-large;
 }
-
+.fixed{
+  position: fixed;
+  z-index: 1;
+}
+.top{
+  top: 0;
+}
+.top2{
+  top: 75px;
+}
+.top3{
+  top: 115px;
+  background-color: white;
+}
+.top4{
+  top: 200px;
+}
+.logintabs{
+  top: 80px;
+  position: relative;
+}
+.absolute{
+  position: absolute;
+}
 .bars {
   position: absolute;
   right: 0;

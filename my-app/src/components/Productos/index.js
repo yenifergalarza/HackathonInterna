@@ -43,9 +43,9 @@ const Index = (props) => {
     <>
        <Header logoutprop={props} cart={<a data-testid='close' onClick={() => {
               auth.logout(() => { props.history.push("/cart") });
-              }} ><i class="fas fa-shopping-cart text-white"></i></a>}/>
+              }} ><i class="fas fa-shopping-cart text-white"></i></a>} />
        <Saldo object={users[0]}/>
-        <div className="fill-available align-items-center d-flex flex-column ">
+        <div className="fill-available align-items-center absolute top4 d-flex flex-column ">
             <ul className="nav justify-content-center" role="tablist">
               <MenuOpts click={() => {setTipo("ofertas")}} options="Ofertas" aClass="nav-item nav-link active text-color"/>
               <MenuOpts click={() => {setTipo("productos")}} options="Productos" aClass="nav-item nav-link text-color" />
