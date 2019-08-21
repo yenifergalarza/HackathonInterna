@@ -12,11 +12,7 @@ import ProductBar from "../Productos/ProductBar"
 const Index = () => {
   const [tipo, setTipo] = useState("ofertas");
   const [products, setProducts] = useState([...ofertasArray]);
-  //Añadir productos a la lista
-  // const addProduct = (id, title, price, counter) => {
-  //   const newProducts = [...products, { id, title, price, counter }];
-  //   setProducts(newProducts);
-  // };
+ 
 
   //Aumentar contidad de productos de la lista
   const addToCart = id => {
@@ -28,8 +24,6 @@ const Index = () => {
     });
     return setProducts(productsNew);
   };
-
-  //Dismin
 
   //Disminuir cantidad de productos de la lista
   const removeFromCart = id => {
@@ -51,7 +45,8 @@ const Index = () => {
   
     <div className="">
       <button
-      style={{border: "none"}}        onClick={() => {
+      style={{border: "none"}}        
+      onClick={() => {
           setTipo("ofertas");
         }}
         type="button"
@@ -89,7 +84,9 @@ const Index = () => {
         </div>
       )}
       {tipo === "productos" && (
-        <ProductBar></ProductBar>
+        <ProductBar
+        />
+          
         )}
       
     </>
