@@ -17,6 +17,14 @@
 .media{
   background-color: rgba(0,0,0,.05)
 }
+.w-80{
+  width:80%;
+}
+.tiendita{
+  background: #b40312;
+  align-items: center;
+  justify-content: space-evenly;
+}
 .footer {
   flex: 1 0 auto;
   flex-shrink: none;

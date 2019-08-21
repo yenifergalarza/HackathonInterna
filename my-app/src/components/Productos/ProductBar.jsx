@@ -45,7 +45,7 @@ const ProductBar = () => {
     <>
     
             <div className="fill-available align-items-center d-flex flex-column ">
-            <ul className="nav nav-tabs justify-content-center" role="tablist">
+            <ul className="nav nav-tabs justify-content-center w-80" role="tablist">
             <li className="nav-item">
             <MenuOpts click={() => {setTipoProductos("aceite")}} options="Aceites" aClass="nav-link active text-color"/>
             </li>

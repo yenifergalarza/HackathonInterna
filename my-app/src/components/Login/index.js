@@ -9,7 +9,7 @@ const Login = (props) => {
 
     return(
         <>
-        <Header />
+        <Header logoutprop={props}/>
         <div className="fill-available align-items-center d-flex flex-column ">
             <ul className="nav justify-content-center" role="tablist">
               <MenuOpts click={() => {setType('Iniciar Sesión');}} options="Iniciar Sesión" aClass="nav-item nav-link active text-color"/>
