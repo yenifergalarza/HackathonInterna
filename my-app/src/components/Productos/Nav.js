@@ -17,6 +17,8 @@ const Nav = ({ logo }) => (
       ></img>
       </Link>
     </header>
+
+    
   </div>
 );
 export default Nav;

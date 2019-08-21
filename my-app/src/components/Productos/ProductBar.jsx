@@ -43,6 +43,7 @@ const ProductBar = () => {
 
   return (
     <>
+    
             <div className="fill-available align-items-center d-flex flex-column ">
             <ul className="nav nav-tabs justify-content-center w-80" role="tablist">
             <li className="nav-item">
