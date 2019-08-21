@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Ofertas = ({name,id,image,removeFromCart,price,counter,addToCart}) => {
+const Ofertas = ({name,id,image,removeFromCart,price,counter,addToCart, total}) => {
 
   return(
     
@@ -20,7 +20,7 @@ const Ofertas = ({name,id,image,removeFromCart,price,counter,addToCart}) => {
     <i class="fas fa-minus"></i>
   </button>
 </div>
-<button class="btn btn-danger"  > Añade</button>
+<button class="btn btn-danger" onClick={total} >Agregar al carrito</button>
         </div>
        
     

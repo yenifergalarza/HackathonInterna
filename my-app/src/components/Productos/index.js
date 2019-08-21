@@ -7,6 +7,7 @@ import ProductBar from "../Productos/ProductBar"
 import Header from '../header'
 import Saldo from './saldo'
 import MenuOpts from '../Options'
+
 const Index = () => {
   const [tipo, setTipo] = useState("ofertas");
   const [products, setProducts] = useState([...ofertasArray]);
@@ -39,23 +40,29 @@ const [billProducts,setBillProducts]=useState(0);
   };
 
 
-const arrayBillProducts=(productos)=>{
-let prodcts=[...products,{total:0}]
-// prodcts.filter( prod =>{
-// prod.counter>0
-// })
-// prodcts.map(prod=>{prod.total=prod.price*prod.counter
 
-// });
+const getTotal = prodcts => {
+  let emptyArray = [];
+  let emptyArrayContent = 0;
+  let prods =[...prodcts]
+  prods.filter( prod =>{
+    return prod.counter>0
+    })
+    prods.forEach(prod => {
+    return emptyArray.push(prod.counter * prod.price);
+  });
 
-setBillProducts()
-}
-
+  emptyArray.forEach(prod => {
+    return (emptyArrayContent += prod);
+  });
+  setBillProducts(emptyArrayContent)
+  return emptyArrayContent;
+};
   return (
     <>
        <Header />
-       <Saldo object={users[0]}/>
-       <button OnClick={()=>{arrayBillProducts(products)}} ></button>
+       <Saldo object={users[0]}
+       plata={billProducts}/>
         <div className="fill-available align-items-center d-flex flex-column ">
             <ul className="nav justify-content-center" role="tablist">
               <MenuOpts click={() => {setTipo("ofertas")}} options="Ofertas" aClass="nav-item nav-link active text-color"/>
@@ -67,6 +74,7 @@ setBillProducts()
                   {products.map(prod => (
                     <Ofertas
                       id={prod.id}
+                      total={()=>getTotal(products)}
                       // addProduct={addProduct}
                       addToCart={addToCart}
                       removeFromCart={removeFromCart}
