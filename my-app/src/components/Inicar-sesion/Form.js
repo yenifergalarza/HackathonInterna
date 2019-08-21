@@ -2,18 +2,28 @@ import React, { useState } from 'react'
 import Inputs from '../Input'
 // import getToken from '../../controller/login';
 // import getUser from '../../controller/users/get-user-id';
+import { users } from '../../controller/users';
 import auth from '../../controller/routes/auth';
-
-const Form = ({ logprop }) => {
+const Form = ({logprop}) => {
   const [dni, setDni] = useState("");
   const [password, setPassword] = useState("");
-  const [err, setErr] = useState("")
 
   return (
     <form 
     onSubmit={ e => {
       e.preventDefault()
-        auth.login(() => { logprop.history.push("/home") })
+      if(users.find(o => o.dni === dni && o.admin===false)){
+        const newusers = users.map((e)=>{
+          if(e.admin===false){
+            return {dni:e.dni, name:e.name, saldo:e.saldo}
+          }
+        })
+        localStorage.setItem('activeUser', JSON.stringify(newusers))
+        return auth.login(() => { logprop.history.push("/productos") })
+      }else if(users.find(o => o.dni === dni && o.admin===true)){
+        return auth.login(() => { logprop.history.push("/reporte") })
+      }
+
     }}
       className="col-12 mt-3 flex-column d-flex form-group" data-testid="form">
 
@@ -35,7 +45,6 @@ const Form = ({ logprop }) => {
         classValue='passwordValue form-control border-none'
       />
       <button data-testid='login' type="submit" className='btn btn-color'>Ingresar</button>
-      {err && <p data-testid="errMsg" className='pt-3 text-danger'>*{err}</p>}
     </form>
   )
 }

@@ -1,19 +1,18 @@
-import React,{useState} from 'react';
-import {firebaseAuth} from '../../controller/Firebase/authentication'
-import { useCollection } from "react-firebase-hooks/firestore";
+import React from 'react';
 
-import {agregarProducto,
-  eliminarProducto,
-  disminuirCntd
-} from '../../controller/productos/productos'
-
-
-const EachProducts = ({key,name,price,image,producto}) => {
-  const [pedidos, setPedidos] = useState([]);
-  
+const EachProducts = ({
+  id,
+  key,
+  name,
+  price,
+  image,
+  counter,
+  addToCart,
+  removeFromCart}) => {
+ 
   return (
     <>
-    <div class="card col-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 m-1 "    key={key}>
+    <div class="card col-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 m-1 " key={key}>
       <img src={image} class="card-img-top figure-img img-fluid rounded" /* style={{height: 475+"px"}} */alt="..."/>
       <div class="card-body">
         <h5 class="card-title text-center"> {name}</h5>
@@ -25,20 +24,19 @@ const EachProducts = ({key,name,price,image,producto}) => {
           class="btn btn-danger "
           type="button"
           onClick={() => {
-            setPedidos(agregarProducto(producto, pedidos))
+            addToCart(id)
         }}>
           
             <i class="fas fa-plus"></i>
         </button>
-        <button> 
-          
-          el contador p
+        <button class="btn btn-danger "> 
+        {counter}
         </button>
         <button 
           class="btn btn-danger"
           type="button"
           onClick={() => {
-            setPedidos(agregarProducto(producto, pedidos))
+            removeFromCart(id)
           }}>
           <i class="fas fa-minus"></i>
         </button>

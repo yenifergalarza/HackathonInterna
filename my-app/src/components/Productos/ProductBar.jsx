@@ -1,110 +1,69 @@
-
-
 import React, { useState } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 
-import {productsData} from '../../controller/Firebase/authentication'
+import {arrayOfProductos} from '../../components/Productos/ArrayOfProductos'
 import EachProduct from "../Productos/EachProduct"
- 
+import MenuOpts from '../Options'
 
 
 
 const ProductBar = () => {
   const [tipoProductos, setTipoProductos] = useState("aceite");
-  const [oil, loading, error] = useCollection(
-    productsData.where("category", "==", "aceite"),
-    {
-      snapshotListenOptions: { includeMetadataChanges: true }
-    }
-  );
+  const [products1, setProducts1] = useState([...arrayOfProductos]);
+  const oil = products1.filter(prod => prod.category ==="aceites");
+  const can = products1.filter(prod => prod.category ==="conservas");
+  const detergent = products1.filter(prod => prod.category ==="detergentes");
+  const soap = products1.filter(prod => prod.category ==="jabones");
+  const noodles = products1.filter(prod => prod.category ==="pastas");
 
-  const [can, loading2, error2] = useCollection(
-    productsData.where("category", "==", "conservas"),
-    {
-      snapshotListenOptions: { includeMetadataChanges: true }
-    }
-  );
+  const addToCart = id => {
+    let productsNew = [...products1];
+    productsNew.forEach(prod => {
+      if (prod.id === id) {
+        return (prod.counter = prod.counter + 1);
+      }
+    });
+    return setProducts1(productsNew);
+  };
 
-  const [detergent, loading3, error3] = useCollection(
-    productsData.where("category", "==", "detergente"),
-    {
-      snapshotListenOptions: { includeMetadataChanges: true }
-    }
-  );
+  //Disminuir cantidad de productos de la lista
+  const removeFromCart = id => {
+    let productsNew = [...products1];
+    productsNew.forEach(prod => {
+      if (prod.id === id && prod.counter > 0) {
+        return (prod.counter = prod.counter - 1);
+      }
+    });
 
-  const [soap, loading4, error4] = useCollection(
-    productsData.where("category", "==", "jabones"),
-    {
-      snapshotListenOptions: { includeMetadataChanges: true }
-    }
-  );
+    console.log(productsNew);
 
-  const [noodles, loading5, error5] = useCollection(
-    productsData.where("category", "==", "pastas"),
-    {
-      snapshotListenOptions: { includeMetadataChanges: true }
-    }
-  );
+    setProducts1(productsNew);
+    return products1;
+  };
 
   return (
     <>
-    <div  className="">
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-   <button
-        onClick={() => {
-          setTipoProductos("aceite");
-        }}
-        type="button"
-        className="  btn btn-danger"
-      >
-       aceite
-      </button>
-
-      <button
-        onClick={() => {
-          setTipoProductos("conservas");
-        }}
-        type="button"
-        className=" btn btn-danger"
-      >
-        conservas
-      </button>
-         <button
-        onClick={() => {
-          setTipoProductos("detergente");
-        }}
-        type="button"
-        className=" btn btn-danger"
-      >
-        detergente
-      </button>
-          <button
-        onClick={() => {
-          setTipoProductos("jabones");
-        }}
-        type="button"
-        className="  btn btn-danger"
-      >
-        jabones
-      </button>
-         <button
-        onClick={() => {
-          setTipoProductos("pastas");
-        }}
-        type="button"
-        className=" btn btn-danger"
-      >
-        pastas
-      </button>
-</div>
-      </div>
+    
+            <div className="fill-available align-items-center d-flex flex-column ">
+            <ul className="nav nav-tabs justify-content-center" role="tablist">
+            <li className="nav-item">
+            <MenuOpts click={() => {setTipoProductos("aceite")}} options="Aceites" aClass="nav-link active text-color"/>
+            </li>
+            <li className="nav-item">
+              <MenuOpts click={() => {setTipoProductos("conservas")}} options="Conservas" aClass="nav-link text-color" />
+            </li>
+            <li className="nav-item">
+            <MenuOpts click={() => {setTipoProductos("detergente")}} options="Detergentes" aClass="nav-link text-color" />
+            </li >
+            <li className="nav-item">
+            <MenuOpts click={() => {setTipoProductos("jabones")}} options="Jabones" aClass=" nav-link  text-color" />
+            </li>
+            <li className="nav-item">
+            <MenuOpts click={() => {setTipoProductos("pastas")}} options="Pastas" aClass="nav-link text-color" />
+            </li>
+            </ul>
       <div>
-      {error && <strong>Error: {JSON.stringify(error)}</strong>}
-            {loading && (
-              <progress class="progress is-medium is-dark" max="100">
-                45%
-              </progress>
-            )}
+      
  {tipoProductos === "aceite" && (
          <div className="card-group">
          {oil && (
@@ -112,12 +71,15 @@ const ProductBar = () => {
              className="row m-5"
             
            >
-             {oil.docs.map(doc => (
+             {oil.map(doc => (
                <EachProduct
-              
-                 name={doc.data().name}
-               price={doc.data().price}  
-               image={doc.data().image}
+               id={doc.id}
+               addToCart={addToCart}
+               removeFromCart={removeFromCart}
+                 name={doc.name}
+               price={doc.price}  
+               image={doc.image}
+               counter={doc.counter}
                
                ></EachProduct>
              ))}
@@ -129,12 +91,7 @@ const ProductBar = () => {
      
      
       <div>
-      {error2 && <strong>Error: {JSON.stringify(error)}</strong>}
-            {loading2 && (
-              <progress class="progress is-medium is-dark" max="100">
-                45%
-              </progress>
-            )}
+      
  {tipoProductos === "conservas" && (
          <div className="card-group">
          {can && (
@@ -142,13 +99,15 @@ const ProductBar = () => {
              className="row m-5"
             
            >
-             {can.docs.map(doc => (
+             {can.map(doc => (
                <EachProduct
-              
-                 name={doc.data().name}
-               price={doc.data().price}  
-               image={doc.data().image}
-               
+               id={doc.id}
+               addToCart={addToCart}
+               removeFromCart={removeFromCart}
+                 name={doc.name}
+               price={doc.price}  
+               image={doc.image}
+               counter={doc.counter}
                ></EachProduct>
              ))}
            </div>
@@ -157,12 +116,7 @@ const ProductBar = () => {
       )}
       </div>
       <div>
-      {error3 && <strong>Error: {JSON.stringify(error)}</strong>}
-            {loading3 && (
-              <progress class="progress is-medium is-dark" max="100">
-                45%
-              </progress>
-            )}
+     
  {tipoProductos === "detergente" && (
          <div className="card-group">
          {detergent && (
@@ -170,13 +124,15 @@ const ProductBar = () => {
              className="row m-5"
             
            >
-             {detergent.docs.map(doc => (
+             {detergent.map(doc => (
                <EachProduct
-              
-                 name={doc.data().name}
-               price={doc.data().price}  
-               image={doc.data().image}
-               
+               id={doc.id}
+               addToCart={addToCart}
+               removeFromCart={removeFromCart}
+                 name={doc.name}
+               price={doc.price}  
+               image={doc.image}
+               counter={doc.counter}
                ></EachProduct>
              ))}
            </div>
@@ -185,12 +141,7 @@ const ProductBar = () => {
       )}
       </div>
       <div>
-      {error4 && <strong>Error: {JSON.stringify(error)}</strong>}
-            {loading4 && (
-              <progress class="progress is-medium is-dark" max="100">
-                45%
-              </progress>
-            )}
+      
  {tipoProductos === "jabones" && (
          <div className="card-group">
          {soap && (
@@ -198,12 +149,15 @@ const ProductBar = () => {
              className="row m-5"
             
            >
-             {soap.docs.map(doc => (
+             {soap.map(doc => (
                <EachProduct
-              
-                 name={doc.data().name}
-               price={doc.data().price}  
-               image={doc.data().image}
+               id={doc.id}
+               addToCart={addToCart}
+               removeFromCart={removeFromCart}
+                 name={doc.name}
+               price={doc.price}  
+               image={doc.image}
+               counter={doc.counter}
                
                ></EachProduct>
              ))}
@@ -213,12 +167,7 @@ const ProductBar = () => {
       )}
       </div>
       <div>
-      {error5 && <strong>Error: {JSON.stringify(error)}</strong>}
-            {loading5 && (
-              <progress class="progress is-medium is-dark" max="100">
-                45%
-              </progress>
-            )}
+      
  {tipoProductos === "pastas" && (
          <div className="card-group">
          {noodles && (
@@ -226,12 +175,15 @@ const ProductBar = () => {
              className="row m-5"
             
            >
-             {noodles.docs.map(doc => (
+             {noodles.map(doc => (
                <EachProduct
-              
-                 name={doc.data().name}
-               price={doc.data().price}  
-               image={doc.data().image}
+               id={doc.id}
+               addToCart={addToCart}
+               removeFromCart={removeFromCart}
+                 name={doc.name}
+               price={doc.price}  
+               image={doc.image}
+               counter={doc.counter}
                
                ></EachProduct>
              ))}
@@ -241,7 +193,7 @@ const ProductBar = () => {
       )}
       </div>
      
-    
+    </div>
     
     
     </>
