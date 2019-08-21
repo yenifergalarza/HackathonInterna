@@ -11,7 +11,7 @@ const Index = () => {
   const [tipo, setTipo] = useState("ofertas");
   const [products, setProducts] = useState([...ofertasArray]);
  
-
+const [billProducts,setBillProducts]=useState(0);
   //Aumentar contidad de productos de la lista
   const addToCart = id => {
     let productsNew = [...products];
@@ -38,10 +38,24 @@ const Index = () => {
     return products;
   };
 
+
+const arrayBillProducts=(productos)=>{
+let prodcts=[...products,{total:0}]
+prodcts.filter( prod =>{
+prod.counter>0
+})
+prodcts.map(prod=>{prod.total=prod.price*prod.counter
+
+});
+
+setBillProducts()
+}
+
   return (
     <>
        <Header />
-       <Saldo object={users[0]}/>
+       <Saldo object={billProducts}/>
+       <button OnClick={()=>{arrayBillProducts(products)}} ></button>
         <div className="fill-available align-items-center d-flex flex-column ">
             <ul className="nav justify-content-center" role="tablist">
               <MenuOpts click={() => {setTipo("ofertas")}} options="Ofertas" aClass="nav-item nav-link active text-color"/>
