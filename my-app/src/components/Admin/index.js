@@ -3,7 +3,7 @@ import Header from '../header'
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { ordersData } from '../../controller/Firebase/authentication';
 import React, { useState } from "react";
-
+import add from '../../img/add.png'
 import Map from "./Map";
 
 const Admin = (props) => {
@@ -65,8 +65,9 @@ const Admin = (props) => {
         <>
             <Header />
             <div className="container-fluid">  <h5>Hola,name,este es el reporte del mes</h5>
+            <img onClick={() => { props.history.push("/admin") }} src={add} className="redirect" />
                 <div className="container  col-12 col-sm-12 col-md-12">
-                    <img onClick={() => { props.history.push("/admin") }}  className="redirect" />
+                
                     <div className="container-fluid" style={{ "display": "flex", "flex-wrap": "wrap" }}>
                         <Chart className=" col-12 col-sm-12 col-md-12"
                             width={'300px'}
