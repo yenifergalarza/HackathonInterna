@@ -59,14 +59,15 @@ const getTotal = prodcts => {
   return emptyArrayContent;
 };
 
-const sendOrders = (products, clientName) => {
+const sendOrders = (products, clientName,plata) => {
   let prods =[...products];
   let newP = prods.filter( prod => prod.counter>0)
   console.log("entre a firebase", newP);
   ordersData.add({
     name: clientName,
     cart: newP,
-    time: new Date()
+    time: new Date(),
+    bill:plata,
   });
   /* setClient("");
   setProducts([]); */
@@ -78,7 +79,7 @@ const sendOrders = (products, clientName) => {
        <Saldo object={users[0]}
        plata={billProducts}/>
        <button onClick={()=>{getTotal(products)}} >Saca tu plata</button>
-       <button onClick={()=>{sendOrders(products,client)}} >C logra enviar </button>
+       <button onClick={()=>{sendOrders(products,client,billProducts)}} >C logra enviar </button>
         <div className="fill-available align-items-center d-flex flex-column ">
             <ul className="nav justify-content-center" role="tablist">
               <MenuOpts click={() => {setTipo("ofertas")}} options="Ofertas" aClass="nav-item nav-link active text-color"/>
