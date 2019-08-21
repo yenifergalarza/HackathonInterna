@@ -1,9 +1,19 @@
 import React from 'react'
 import Chart from 'react-google-charts';
+import App from '../Modify/App';
 
-const Admin = () => {
+import add from '../../img/add.png'
+
+
+
+const Admin = (props) => {
     return (
         <div>
+            <div className="col-6 col-md-3 col-lg-3">
+                {/* <a onClick={() => { props.history.push("/admin") }}>x</a> */}
+
+                <img onClick={() => { props.history.push("/admin") }} src={add} className="redirect" />
+            </div>
             <h5>Hola,name,este es el reporte del mes</h5>
             <div style={{ display: 'flex', maxWidth: 900 }}>
                 <Chart
